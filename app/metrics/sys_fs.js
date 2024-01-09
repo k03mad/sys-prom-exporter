@@ -12,7 +12,7 @@ export default {
         'type',
         'unit',
         'mounted',
-        'filesystem'
+        'filesystem',
     ],
 
     async collect(ctx) {
@@ -24,15 +24,16 @@ export default {
         const headers = table.shift().split(/\s+/);
 
         table.forEach(row => {
-            const data = {}
-            row.split(/\s+/).forEach((cell,i) => {
+            const data = {};
+
+            row.split(/\s+/).forEach((cell, i) => {
                 data[headers[i].toLowerCase()] = cell;
-            })
+            });
 
             ctx.labels('total', UNIT, data.mounted, data.filesystem).set(Number(data['1kib-blocks'].replace(UNIT, '')));
             ctx.labels('used', UNIT, data.mounted, data.filesystem).set(Number(data.used.replace(UNIT, '')));
             ctx.labels('available', UNIT, data.mounted, data.filesystem).set(Number(data.available.replace(UNIT, '')));
             ctx.labels('use%', UNIT, data.mounted, data.filesystem).set(Number(data['use%'].replace('%', '')));
-        })
+        });
     },
 };

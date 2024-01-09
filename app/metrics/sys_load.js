@@ -3,7 +3,7 @@ import {run} from '../helpers/shell.js';
 
 const CMD = 'uptime';
 
-const re = /.+up (?<uptime>.+),.+\d+\s+users.+load average: (?<one>[\d,]+), (?<five>[\d,]+), (?<fifteen>[\d,]+)/
+const re = /.+up (?<uptime>.+),.+\d\s+users.+load average: (?<one>[\d,]+), (?<five>[\d,]+), (?<fifteen>[\d,]+)/;
 
 const getNumberFromLoad = load => Number(load.replace(',', '.'));
 
