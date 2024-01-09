@@ -1,35 +1,38 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const CMD = 'df';
+const UNIT = 'KiB';
 
-const re = {
-    mem: /Mem: +(?<total>\d+) +(?<used>\d+) +(?<free>\d+) +(?<shared>\d+) +(?<buff>\d+) +(?<available>\d+)/,
-    swap: /Swap: +(?<total>\d+) +(?<used>\d+) +(?<free>\d+)/,
-};
+const CMD = `df -B${UNIT}`;
 
 export default {
     name: getCurrentFilename(import.meta.url),
     help: 'Filesystem',
     labelNames: [
-        'name',
         'type',
+        'unit',
+        'mounted',
+        'filesystem'
     ],
 
     async collect(ctx) {
         ctx.reset();
 
-        // const {stdout} = await run(CMD);
+        const {stdout} = await run(CMD);
 
-        // const mem = stdout.match(re.mem);
-        // const swap = stdout.match(re.swap);
+        const table = stdout.trim().split('\n');
+        const headers = table.shift().split(/\s+/);
 
-        // Object.entries(mem.groups).forEach(([type, value]) => {
-        //     ctx.labels('mem', type).set(Number(value));
-        // });
+        table.forEach(row => {
+            const data = {}
+            row.split(/\s+/).forEach((cell,i) => {
+                data[headers[i].toLowerCase()] = cell;
+            })
 
-        // Object.entries(swap.groups).forEach(([type, value]) => {
-        //     ctx.labels('swap', type).set(Number(value));
-        // });
+            ctx.labels('total', UNIT, data.mounted, data.filesystem).set(Number(data['1kib-blocks'].replace(UNIT, '')));
+            ctx.labels('used', UNIT, data.mounted, data.filesystem).set(Number(data.used.replace(UNIT, '')));
+            ctx.labels('available', UNIT, data.mounted, data.filesystem).set(Number(data.available.replace(UNIT, '')));
+            ctx.labels('use%', UNIT, data.mounted, data.filesystem).set(Number(data['use%'].replace('%', '')));
+        })
     },
 };
