@@ -2,38 +2,31 @@ import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
 const UNIT = 'KiB';
-
 const CMD = `df -B${UNIT}`;
+
+const removeValueUnit = value => Number(value.replace(new RegExp(`${UNIT}|%`), ''));
 
 export default {
     name: getCurrentFilename(import.meta.url),
     help: 'Filesystem',
     labelNames: [
         'type',
-        'unit',
         'mounted',
-        'filesystem',
     ],
 
     async collect(ctx) {
         ctx.reset();
 
-        const {stdout} = await run(CMD);
-
-        const table = stdout.trim().split('\n');
-        const headers = table.shift().split(/\s+/);
+        const stdout = await run(CMD);
+        const table = stdout.split('\n');
 
         table.forEach(row => {
-            const data = {};
+            const cells = row.split(/\s+/);
 
-            row.split(/\s+/).forEach((cell, i) => {
-                data[headers[i].toLowerCase()] = cell;
-            });
-
-            ctx.labels('total', UNIT, data.mounted, data.filesystem).set(Number(data['1kib-blocks'].replace(UNIT, '')));
-            ctx.labels('used', UNIT, data.mounted, data.filesystem).set(Number(data.used.replace(UNIT, '')));
-            ctx.labels('available', UNIT, data.mounted, data.filesystem).set(Number(data.available.replace(UNIT, '')));
-            ctx.labels('use%', UNIT, data.mounted, data.filesystem).set(Number(data['use%'].replace('%', '')));
+            ctx.labels(`total_${UNIT}`, cells[5]).set(removeValueUnit(cells[1]));
+            ctx.labels(`used_${UNIT}`, cells[5]).set(removeValueUnit(cells[2]));
+            ctx.labels(`available_${UNIT}`, cells[5]).set(removeValueUnit(cells[3]));
+            ctx.labels('used_percent', cells[5]).set(removeValueUnit(cells[4]));
         });
     },
 };

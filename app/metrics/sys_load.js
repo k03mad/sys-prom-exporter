@@ -1,31 +1,23 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const CMD = 'uptime';
+const CMD = 'cat /proc/loadavg';
 
-const re = /.+up (?<uptime>.+),.+\d\s+users.+load average: (?<one>[\d,]+), (?<five>[\d,]+), (?<fifteen>[\d,]+)/;
-
-const getNumberFromLoad = load => Number(load.replace(',', '.'));
+const re = /(?<one>[\d.]+)\s+(?<five>[\d.]+)\s+(?<fifteen>[\d.]+)/;
 
 export default {
     name: getCurrentFilename(import.meta.url),
     help: 'Load',
-    labelNames: [
-        'name',
-        'type',
-    ],
+    labelNames: ['type'],
 
     async collect(ctx) {
         ctx.reset();
 
-        const {stdout} = await run(CMD);
-
+        const stdout = await run(CMD);
         const load = stdout.match(re);
 
-        ctx.labels('uptime', load.groups.uptime).set(1);
-
-        ctx.labels('load', '1m').set(getNumberFromLoad(load.groups.one));
-        ctx.labels('load', '5m').set(getNumberFromLoad(load.groups.five));
-        ctx.labels('load', '15m').set(getNumberFromLoad(load.groups.fifteen));
+        ctx.labels('1m').set(Number(load.groups.one));
+        ctx.labels('5m').set(Number(load.groups.five));
+        ctx.labels('15m').set(Number(load.groups.fifteen));
     },
 };

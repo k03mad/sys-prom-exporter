@@ -1,35 +1,26 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const CMD = 'free -b';
-
-const re = {
-    mem: /Mem: +(?<total>\d+) +(?<used>\d+) +(?<free>\d+) +(?<shared>\d+) +(?<buff>\d+) +(?<available>\d+)/,
-    swap: /Swap: +(?<total>\d+) +(?<used>\d+) +(?<free>\d+)/,
-};
+const CMD = 'cat /proc/meminfo';
 
 export default {
     name: getCurrentFilename(import.meta.url),
     help: 'Memory',
-    labelNames: [
-        'name',
-        'type',
-    ],
+    labelNames: ['type'],
 
     async collect(ctx) {
         ctx.reset();
 
-        const {stdout} = await run(CMD);
+        const stdout = await run(CMD);
+        const table = stdout.split('\n');
 
-        const mem = stdout.match(re.mem);
-        const swap = stdout.match(re.swap);
+        table.forEach(row => {
+            const cells = row.split(/\s+/);
 
-        Object.entries(mem.groups).forEach(([type, value]) => {
-            ctx.labels('mem', type).set(Number(value));
-        });
-
-        Object.entries(swap.groups).forEach(([type, value]) => {
-            ctx.labels('swap', type).set(Number(value));
+            ctx.labels(
+                cells[0].replace(':', '')
+                + (cells[2] ? `_${cells[2]}` : ''),
+            ).set(Number(cells[1]));
         });
     },
 };
