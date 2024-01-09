@@ -10,7 +10,7 @@ const re = {
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'Memory',
+    help: 'Filesystem',
     labelNames: [
         'name',
         'type',
