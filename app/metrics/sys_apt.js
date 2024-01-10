@@ -13,12 +13,12 @@ export default {
     labelNames: ['type'],
 
     async collect(ctx) {
-        ctx.reset();
-
         if (
             !timestamp
             || (Date.now() - timestamp) > RUN_ONLY_EVERY_MS
         ) {
+            ctx.reset();
+
             const stdout = await run(CMD);
 
             const updates = stdout
