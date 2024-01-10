@@ -5,7 +5,7 @@ import client from 'prom-client';
 
 import env from '../env.js';
 
-import {errorStack, errorText} from './helpers/colors.js';
+import {errorText} from './helpers/colors.js';
 import {logPlainError} from './helpers/logging.js';
 import {packageJson} from './helpers/parse.js';
 import * as metrics from './metrics/_index.js';
@@ -35,7 +35,6 @@ Object
                     logPlainError([
                         `${getDateYMDHMS()} [${name}]`,
                         errorText(err),
-                        errorStack(err.stack),
                     ]);
                 }
             },
