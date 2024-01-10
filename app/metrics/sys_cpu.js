@@ -27,13 +27,17 @@ export default {
 
         const usage = [...stdout.matchAll(RE)].map(elem => {
             const splitted = elem[1].split(' ');
-            return {
-                num: Number(splitted[0].replace(',', '.')),
-                type: usageNameMap[splitted[1]],
-            };
+            const formattedType = usageNameMap[splitted[1]];
+
+            if (formattedType) {
+                return {
+                    num: Number(splitted[0].replace(',', '.')),
+                    type: usageNameMap[splitted[1]],
+                };
+            }
         });
 
-        usage.forEach(({type, num}) => {
+        usage.filter(Boolean).forEach(({type, num}) => {
             ctx.labels(type).set(num);
         });
     },
