@@ -7,7 +7,7 @@
 
 # [System — Prometheus] exporter
 
-— Tested on `Ubuntu 22.04.3 LTS`
+— Tested on `Ubuntu 22.04.3 LTS` \
 — [Use correct Node.JS version](.nvmrc) \
 — Start exporter:
 
