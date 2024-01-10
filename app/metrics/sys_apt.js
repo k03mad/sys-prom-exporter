@@ -9,7 +9,7 @@ let timestamp;
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'APT',
+    help: CMD,
     labelNames: ['type'],
 
     async collect(ctx) {

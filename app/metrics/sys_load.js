@@ -6,7 +6,7 @@ const re = /(?<one>[\d.]+)\s+(?<five>[\d.]+)\s+(?<fifteen>[\d.]+)/;
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'Load',
+    help: CMD,
     labelNames: ['type'],
 
     async collect(ctx) {

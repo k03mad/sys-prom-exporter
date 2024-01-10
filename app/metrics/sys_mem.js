@@ -5,7 +5,7 @@ const CMD = 'cat /proc/meminfo';
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'Memory',
+    help: CMD,
     labelNames: ['type'],
 
     async collect(ctx) {

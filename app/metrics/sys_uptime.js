@@ -6,7 +6,7 @@ const re = /^up\s+/;
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'Uptime',
+    help: CMD,
     labelNames: ['value'],
 
     async collect(ctx) {

@@ -10,7 +10,7 @@ const re = {
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'Network',
+    help: CMD,
     labelNames: ['type'],
 
     async collect(ctx) {

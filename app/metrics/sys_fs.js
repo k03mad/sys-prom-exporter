@@ -10,7 +10,7 @@ const removeValueUnit = value => Number(value.replace(UNIT, ''));
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'Filesystem',
+    help: CMD,
     labelNames: ['type'],
 
     async collect(ctx) {

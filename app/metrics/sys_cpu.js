@@ -17,7 +17,7 @@ const usageNameMap = {
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'CPU',
+    help: CMD,
     labelNames: ['type'],
 
     async collect(ctx) {
