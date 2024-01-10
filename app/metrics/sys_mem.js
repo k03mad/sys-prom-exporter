@@ -14,13 +14,26 @@ export default {
         const stdout = await run(CMD);
         const table = stdout.split('\n');
 
+        const data = {};
+
         table.forEach(row => {
             const cells = row.split(/\s+/);
-
-            ctx.labels(
-                cells[0].replace(':', '')
-                + (cells[2] ? `_${cells[2]}` : ''),
-            ).set(Number(cells[1]));
+            data[cells[0].replace(':', '')] = Number(cells[1]);
         });
+
+        ctx.labels('MemFree').set(data.MemFree);
+        ctx.labels('MemTotal').set(data.MemTotal);
+        ctx.labels('MemUsed').set(data.MemTotal - data.MemAvailable);
+
+        ctx.labels('SwapCached').set(data.SwapCached);
+        ctx.labels('SwapTotal').set(data.SwapTotal);
+        ctx.labels('SwapUsed').set(data.SwapTotal - data.SwapFree);
+
+        ctx.labels('Apps').set(data.MemTotal - data.MemFree - data.Buffers - data.Cached - data.Slab - data.PageTables - data.SwapCached);
+        ctx.labels('Buffers').set(data.Buffers);
+        ctx.labels('Cached').set(data.Cached);
+        ctx.labels('HardwareCorrupted').set(data.HardwareCorrupted);
+        ctx.labels('PageTables').set(data.PageTables);
+        ctx.labels('Slab').set(data.Slab);
     },
 };

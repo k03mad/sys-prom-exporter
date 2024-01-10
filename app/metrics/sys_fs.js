@@ -3,16 +3,14 @@ import {run} from '../helpers/shell.js';
 
 const UNIT = 'KiB';
 const CMD = `df -B${UNIT}`;
+const MOUNT = '/';
 
-const removeValueUnit = value => Number(value.replace(new RegExp(`${UNIT}|%`), ''));
+const removeValueUnit = value => Number(value.replace(UNIT, ''));
 
 export default {
     name: getCurrentFilename(import.meta.url),
     help: 'Filesystem',
-    labelNames: [
-        'type',
-        'mounted',
-    ],
+    labelNames: ['type'],
 
     async collect(ctx) {
         ctx.reset();
@@ -23,10 +21,13 @@ export default {
         table.forEach(row => {
             const cells = row.split(/\s+/);
 
-            ctx.labels(`total_${UNIT}`, cells[5]).set(removeValueUnit(cells[1]));
-            ctx.labels(`used_${UNIT}`, cells[5]).set(removeValueUnit(cells[2]));
-            ctx.labels(`available_${UNIT}`, cells[5]).set(removeValueUnit(cells[3]));
-            ctx.labels('used_percent', cells[5]).set(removeValueUnit(cells[4]));
+            if (cells[5] === MOUNT) {
+                const total = removeValueUnit(cells[1]);
+                const available = removeValueUnit(cells[3]);
+
+                ctx.labels('total').set(total);
+                ctx.labels('used').set(total - available);
+            }
         });
     },
 };

@@ -2,7 +2,6 @@ import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
 const CMD = 'cat /proc/loadavg';
-
 const re = /(?<one>[\d.]+)\s+(?<five>[\d.]+)\s+(?<fifteen>[\d.]+)/;
 
 export default {

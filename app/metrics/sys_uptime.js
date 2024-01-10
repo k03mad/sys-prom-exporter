@@ -12,6 +12,6 @@ export default {
         ctx.reset();
 
         const stdout = await run(CMD);
-        ctx.labels(stdout).set(1);
+        ctx.labels(stdout.replace('up ', '')).set(1);
     },
 };
