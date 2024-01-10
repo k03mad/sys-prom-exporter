@@ -2,8 +2,9 @@ import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
 const UNIT = 'KiB';
-const CMD = `df -B${UNIT}`;
 const MOUNT = '/';
+
+const CMD = `df -B${UNIT}`;
 
 const removeValueUnit = value => Number(value.replace(UNIT, ''));
 
