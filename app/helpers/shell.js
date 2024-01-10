@@ -11,3 +11,12 @@ export const run = async runString => {
     const {stdout} = await exec(runString, {shell: '/bin/bash'});
     return stdout?.trim();
 };
+
+/**
+ * @param {string|number} pid
+ * @returns {Promise<string>}
+ */
+export const pathByPid = async pid => {
+    const stdout = await run(`pwdx ${pid}`);
+    return stdout.replace(/^\d+:\s+/, '');
+};
