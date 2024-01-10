@@ -6,4 +6,6 @@ export {default as sys_fs} from './sys_fs.js';
 export {default as sys_load} from './sys_load.js';
 export {default as sys_mem} from './sys_mem.js';
 export {default as sys_network} from './sys_network.js';
+export {default as sys_pkg} from './sys_pkg.js';
+export {default as sys_ports} from './sys_ports.js';
 export {default as sys_uptime} from './sys_uptime.js';

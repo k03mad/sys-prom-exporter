@@ -2,7 +2,7 @@ import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
 const CMD = 'top -n 1 -b -i';
-const re = /([\d,]+\s+[a-z]{2})(,|\n)/g;
+const RE = /([\d,]+\s+[a-z]{2})(,|\n)/g;
 
 const usageNameMap = {
     us: 'User',
@@ -25,7 +25,7 @@ export default {
 
         const stdout = await run(CMD);
 
-        const usage = [...stdout.matchAll(re)].map(elem => {
+        const usage = [...stdout.matchAll(RE)].map(elem => {
             const splitted = elem[1].split(' ');
             return {
                 num: Number(splitted[0].replace(',', '.')),

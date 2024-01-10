@@ -2,7 +2,7 @@ import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
 const CMD = 'apt-get update && apt-get upgrade -u -s';
-const re = /^Inst/;
+const FIND_STARTS = 'Inst';
 
 const RUN_ONLY_EVERY_MS = 3_600_000;
 let timestamp;
@@ -23,7 +23,7 @@ export default {
 
             const updates = stdout
                 .split('\n')
-                .filter(el => re.test(el))
+                .filter(el => el.startsWith(FIND_STARTS))
                 .length;
 
             ctx.labels('updates').set(updates);

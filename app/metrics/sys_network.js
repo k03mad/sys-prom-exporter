@@ -3,7 +3,7 @@ import {run} from '../helpers/shell.js';
 
 const CMD = 'ifconfig';
 
-const re = {
+const RE = {
     iface: /^(\w+):/,
     bytes: /bytes (\d+)/g,
 };
@@ -20,8 +20,8 @@ export default {
         const interfaces = stdout.split('\n\n');
 
         interfaces.forEach(iface => {
-            const ifaceName = iface.match(re.iface)[1];
-            const ifaceBytes = [...iface.matchAll(re.bytes)].map(elem => Number(elem[1]));
+            const ifaceName = iface.match(RE.iface)[1];
+            const ifaceBytes = [...iface.matchAll(RE.bytes)].map(elem => Number(elem[1]));
 
             ctx.labels(ifaceName).set(ifaceBytes[0] + ifaceBytes[1]);
         });
