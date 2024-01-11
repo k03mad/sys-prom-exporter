@@ -12,7 +12,7 @@ export default {
         ctx.reset();
 
         const stdout = await run(CMD);
-        const table = stdout.split('/n');
+        const table = stdout.split('\n');
 
         const headers = table[1].split(/\s+/);
 
