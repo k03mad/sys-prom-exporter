@@ -82,6 +82,265 @@
       "fieldConfig": {
         "defaults": {
           "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "idle"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 365,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean",
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last",
+          "sortDesc": true,
+          "width": 250
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "9.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"sys\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "A",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"usr\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "B",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"nice\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "I",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"gnice\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "C",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"iowait\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "D",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"irq\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "E",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"soft\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "F",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"steal\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "G",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu_top{type=\"idle\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "H",
+          "step": 240
+        }
+      ],
+      "title": "CPU Usage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
             "mode": "thresholds"
           },
           "mappings": [
@@ -164,7 +423,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 2
+        "y": 9
       },
       "id": 265,
       "panels": [],
@@ -267,7 +526,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 3
+        "y": 10
       },
       "id": 3,
       "links": [],
@@ -522,7 +781,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 3
+        "y": 10
       },
       "id": 7,
       "links": [],
@@ -649,7 +908,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 12
+        "y": 19
       },
       "hideTimeOverride": false,
       "id": 16,
@@ -786,7 +1045,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 12
+        "y": 19
       },
       "hideTimeOverride": false,
       "id": 349,
@@ -923,7 +1182,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 12
+        "y": 19
       },
       "hideTimeOverride": false,
       "id": 348,
@@ -1052,7 +1311,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 21
+        "y": 28
       },
       "id": 350,
       "links": [],
@@ -1292,7 +1551,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 21
+        "y": 28
       },
       "id": 322,
       "links": [],
@@ -1340,7 +1599,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 37
       },
       "id": 331,
       "panels": [],
@@ -1410,7 +1669,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 31
+        "y": 38
       },
       "id": 333,
       "links": [],
@@ -1514,7 +1773,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 31
+        "y": 38
       },
       "id": 358,
       "links": [],
@@ -1561,7 +1820,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 47
       },
       "id": 323,
       "panels": [],
@@ -1631,7 +1890,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 48
       },
       "id": 360,
       "links": [],
@@ -1734,7 +1993,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 41
+        "y": 48
       },
       "id": 361,
       "links": [],
@@ -1778,7 +2037,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 57
       },
       "id": 356,
       "panels": [],
@@ -1862,7 +2121,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 58
       },
       "id": 357,
       "links": [],
@@ -1911,7 +2170,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 60
+        "y": 67
       },
       "id": 354,
       "panels": [],
@@ -1996,7 +2255,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 61
+        "y": 68
       },
       "id": 355,
       "links": [],
@@ -2115,7 +2374,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 61
+        "y": 68
       },
       "id": 353,
       "links": [],
@@ -2163,7 +2422,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 77
       },
       "id": 334,
       "panels": [],
@@ -2233,7 +2492,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 78
       },
       "id": 359,
       "links": [],
@@ -2279,7 +2538,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 80
+        "y": 87
       },
       "id": 337,
       "panels": [],
@@ -2349,7 +2608,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 81
+        "y": 88
       },
       "id": 362,
       "links": [],
@@ -2466,7 +2725,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 81
+        "y": 88
       },
       "id": 363,
       "links": [],
@@ -2526,7 +2785,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 90
+        "y": 97
       },
       "id": 327,
       "panels": [],
@@ -2596,7 +2855,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 91
+        "y": 98
       },
       "id": 364,
       "links": [],
@@ -2642,7 +2901,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 100
+        "y": 107
       },
       "id": 330,
       "panels": [],
@@ -2712,7 +2971,7 @@
         "h": 9,
         "w": 16,
         "x": 0,
-        "y": 101
+        "y": 108
       },
       "id": 329,
       "links": [],
@@ -2829,7 +3088,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 101
+        "y": 108
       },
       "id": 346,
       "links": [],
@@ -2897,7 +3156,7 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
@@ -2928,6 +3187,6 @@
   "timezone": "browser",
   "title": "System",
   "uid": "c80f4a3d-2467-4640-b3e8-391033e95342",
-  "version": 65,
+  "version": 66,
   "weekStart": ""
 }
