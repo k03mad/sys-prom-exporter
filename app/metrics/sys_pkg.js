@@ -7,7 +7,7 @@ const FIND_STARTS = 'ii';
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: ['type'],
+    labelNames: ['name'],
 
     async collect(ctx) {
         ctx.reset();

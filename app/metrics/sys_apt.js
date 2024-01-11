@@ -10,7 +10,7 @@ let timestamp;
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: ['type'],
+    labelNames: ['name'],
 
     async collect(ctx) {
         ctx.reset();
@@ -19,6 +19,8 @@ export default {
             !timestamp
             || (Date.now() - timestamp) > RUN_ONLY_EVERY_MS
         ) {
+            timestamp = Date.now();
+
             const stdout = await run(CMD);
 
             const updates = stdout
@@ -27,8 +29,6 @@ export default {
                 .length;
 
             ctx.labels('updates').set(updates);
-
-            timestamp = Date.now();
         }
     },
 };

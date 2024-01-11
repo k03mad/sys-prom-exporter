@@ -51,12 +51,12 @@ export default {
             }
         });
 
-        Object.entries(metricsCpu).forEach(([name, value]) => {
-            ctx.labels(name, 'cpu').set(value);
+        Object.entries(metricsCpu).forEach(([type, value]) => {
+            ctx.labels('cpu', type).set(value);
         });
 
-        Object.entries(metricsMem).forEach(([name, value]) => {
-            ctx.labels(name, 'mem').set(value);
+        Object.entries(metricsMem).forEach(([type, value]) => {
+            ctx.labels('mem', type).set(value);
         });
     },
 };

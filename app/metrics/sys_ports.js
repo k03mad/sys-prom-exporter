@@ -7,7 +7,7 @@ const RE = /[\d*\]]:(?<port>\d+).+users:\({2}"(?<name>.+?)",pid=(?<pid>\d+)/;
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: ['name'],
+    labelNames: ['type'],
 
     async collect(ctx) {
         ctx.reset();
