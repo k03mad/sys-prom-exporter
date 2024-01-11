@@ -3,6 +3,7 @@
 export {default as sys_apt} from './sys_apt.js';
 export {default as sys_certbot} from './sys_certbot.js';
 export {default as sys_cpu} from './sys_cpu.js';
+export {default as sys_cpu_range} from './sys_cpu_range.js';
 export {default as sys_cpu_stat} from './sys_cpu_stat.js';
 export {default as sys_cpu_top} from './sys_cpu_top.js';
 export {default as sys_f2b} from './sys_f2b.js';
