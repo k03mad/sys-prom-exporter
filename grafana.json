@@ -140,7 +140,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sys_cpu{name=\"uptime\"}",
+          "expr": "sys_uptime",
           "format": "time_series",
           "hide": false,
           "instant": true,
@@ -245,7 +245,23 @@
           },
           "unit": "percent"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "idle"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 9,
@@ -282,7 +298,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sys_cpu{type=\"System\"}",
+          "expr": "sys_cpu{type=\"sys\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -297,7 +313,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sys_cpu{type=\"User\"}",
+          "expr": "sys_cpu{type=\"usr\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -313,7 +329,23 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sys_cpu{type=\"Nice\"}",
+          "expr": "sys_cpu{type=\"nice\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "I",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu{type=\"gnice\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -329,7 +361,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sys_cpu{type=\"IoWait\"}",
+          "expr": "sys_cpu{type=\"iowait\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -345,7 +377,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sys_cpu{type=\"HardIrq\"}",
+          "expr": "sys_cpu{type=\"irq\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -361,7 +393,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sys_cpu{type=\"SoftIrq\"}",
+          "expr": "sys_cpu{type=\"soft\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -377,7 +409,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sys_cpu{type=\"Steal\"}",
+          "expr": "sys_cpu{type=\"steal\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -393,7 +425,23 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sys_cpu{type=\"Idle\"}",
+          "expr": "sys_cpu{type=\"guest\"}",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{type}}",
+          "range": true,
+          "refId": "J",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sys_cpu{type=\"idle\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -505,7 +553,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sys_cpu{name=\"load\"}",
+          "expr": "sys_load",
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -988,8 +1036,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1216,8 +1263,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1348,8 +1394,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1453,8 +1498,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1571,8 +1615,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1675,8 +1718,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1791,8 +1833,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1909,8 +1950,8 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
-            "spanNulls": false,
+            "showPoints": "auto",
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -1926,8 +1967,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1963,7 +2003,7 @@
       "options": {
         "legend": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "displayMode": "table",
           "placement": "bottom",
@@ -2046,8 +2086,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2858,7 +2897,7 @@
     "list": []
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -2889,6 +2928,6 @@
   "timezone": "browser",
   "title": "System",
   "uid": "c80f4a3d-2467-4640-b3e8-391033e95342",
-  "version": 61,
+  "version": 65,
   "weekStart": ""
 }
