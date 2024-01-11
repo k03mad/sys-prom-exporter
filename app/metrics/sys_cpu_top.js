@@ -2,7 +2,7 @@ import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
 const CMD = 'top -ibn1';
-const RE = /(?<User>[\d,]+)\s+us,\s+(?<System>[\d,]+)\s+sy,\s+(?<Nice>[\d,]+)\s+ni,\s+(?<Idle>[\d,]+)\s+id,\s+(?<IoWait>[\d,]+)\s+wa,\s+(?<HardIrq>[\d,]+)\s+hi,\s+(?<SoftIrq>[\d,]+)\s+si,\s+(?<Steal>[\d,]+)\s+st/;
+const RE = /(?<usr>[\d,]+)\s+us,\s+(?<sys>[\d,]+)\s+sy,\s+(?<nice>[\d,]+)\s+ni,\s+(?<idle>[\d,]+)\s+id,\s+(?<iowait>[\d,]+)\s+wa,\s+(?<irq>[\d,]+)\s+hi,\s+(?<soft>[\d,]+)\s+si,\s+(?<steal>[\d,]+)\s+st/;
 
 export default {
     name: getCurrentFilename(import.meta.url),
