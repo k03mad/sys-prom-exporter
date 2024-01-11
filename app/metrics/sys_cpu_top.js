@@ -7,10 +7,7 @@ const RE = /(?<usr>[\d,]+)\s+us,\s+(?<sys>[\d,]+)\s+sy,\s+(?<nice>[\d,]+)\s+ni,\
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: [
-        'name',
-        'type',
-    ],
+    labelNames: ['type'],
 
     async collect(ctx) {
         ctx.reset();
