@@ -1,7 +1,7 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const CMD = 'mpstat';
+const CMD = 'mpstat -o JSON';
 
 export default {
     name: getCurrentFilename(import.meta.url),
@@ -12,20 +12,16 @@ export default {
         ctx.reset();
 
         const stdout = await run(CMD);
-        const table = stdout.split('\n');
 
-        const headers = table[2]
-            .split(/\s+/)
-            .filter(elem => elem.includes('%'))
-            .map(elem => elem.replace('%', ''));
+        const stats = JSON.parse(stdout)
+            .sysstat
+            .hosts[0]
+            .statistics[0]['cpu-load'][0];
 
-        const values = table[3]
-            .split(/\s+/)
-            .filter(elem => elem.includes(','))
-            .map(elem => Number(elem.replace(',', '.')));
-
-        headers.forEach((header, i) => {
-            ctx.labels(header).set(values[i]);
+        Object.entries(stats).forEach(([type, value]) => {
+            if (typeof value === 'number') {
+                ctx.labels(type).set(value);
+            }
         });
     },
 };
