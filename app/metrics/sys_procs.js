@@ -58,5 +58,7 @@ export default {
         Object.entries(metricsMem).forEach(([type, value]) => {
             ctx.labels('mem', type).set(value);
         });
+
+        ctx.labels('count', null).set(table.length - 1);
     },
 };
