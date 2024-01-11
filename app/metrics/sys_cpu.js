@@ -1,12 +1,12 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const CMD = 'top -n 1 -b -i';
+const CMD = 'top -ibn1';
 
 const RE = {
     cpu: /(?<User>[\d,]+)\s+us,\s+(?<System>[\d,]+)\s+sy,\s+(?<Nice>[\d,]+)\s+ni,\s+(?<Idle>[\d,]+)\s+id,\s+(?<IoWait>[\d,]+)\s+wa,\s+(?<HardIrq>[\d,]+)\s+hi,\s+(?<SoftIrq>[\d,]+)\s+si,\s+(?<Steal>[\d,]+)\s+st/,
     load: /load average:\s+(?<_1m>[\d,]+),\s+(?<_5m>[\d,]+),\s+(?<_15m>[\d,]+)/,
-    uptime: /up\s(.+),\s+\d+\s+users/,
+    uptime: /up\s(.+),\s+\d+\s+user/,
 };
 
 export default {
