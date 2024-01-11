@@ -18,7 +18,7 @@ export default {
 
         table[5].split(/\s+/).forEach((cell, i) => {
             if (i >= 2) {
-                ctx.labels(headers[i].replace('%', '')).set(Number(cell.replace(',', '')));
+                ctx.labels(headers[i].replace('%', '')).set(Number(cell.replace(',', '.')));
             }
         });
     },
