@@ -82,265 +82,6 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "opacity",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineStyle": {
-              "fill": "solid"
-            },
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "normal"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "idle"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 0
-      },
-      "id": 365,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [
-            "max",
-            "mean",
-            "last"
-          ],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true,
-          "sortBy": "Last",
-          "sortDesc": true,
-          "width": 250
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
-      "pluginVersion": "9.2.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"sys\"}",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "A",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"usr\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "B",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"nice\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "I",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"gnice\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "C",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"iowait\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "D",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"irq\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "E",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"soft\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "F",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"steal\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "G",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sys_cpu_top{type=\"idle\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{type}}",
-          "range": true,
-          "refId": "H",
-          "step": 240
-        }
-      ],
-      "title": "CPU Usage",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
             "mode": "thresholds"
           },
           "mappings": [
@@ -423,7 +164,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 2
       },
       "id": 265,
       "panels": [],
@@ -526,9 +267,9 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 10
+        "y": 3
       },
-      "id": 3,
+      "id": 368,
       "links": [],
       "options": {
         "legend": {
@@ -781,7 +522,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 3
       },
       "id": 7,
       "links": [],
@@ -908,7 +649,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 19
+        "y": 12
       },
       "hideTimeOverride": false,
       "id": 16,
@@ -1045,7 +786,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 19
+        "y": 12
       },
       "hideTimeOverride": false,
       "id": 349,
@@ -1182,7 +923,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 19
+        "y": 12
       },
       "hideTimeOverride": false,
       "id": 348,
@@ -1295,7 +1036,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1311,7 +1053,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 28
+        "y": 21
       },
       "id": 350,
       "links": [],
@@ -1522,7 +1264,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1551,7 +1294,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 28
+        "y": 21
       },
       "id": 322,
       "links": [],
@@ -1578,19 +1321,23 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sys_network",
-          "interval": "",
+          "expr": "increase(sys_network[60m])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "interval": "60m",
           "intervalFactor": 1,
           "legendFormat": "{{type}}",
           "metric": "",
           "range": true,
           "refId": "A",
           "step": 600,
-          "target": ""
+          "target": "",
+          "useBackend": false
         }
       ],
-      "title": "Network Traffic",
+      "title": "Network Traffic Per Hour",
       "type": "timeseries"
     },
     {
@@ -1599,7 +1346,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 30
       },
       "id": 331,
       "panels": [],
@@ -1653,7 +1400,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1669,7 +1417,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 31
       },
       "id": 333,
       "links": [],
@@ -1757,7 +1505,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1773,7 +1522,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 38
+        "y": 31
       },
       "id": 358,
       "links": [],
@@ -1820,7 +1569,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 40
       },
       "id": 323,
       "panels": [],
@@ -1874,7 +1623,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1890,7 +1640,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 48
+        "y": 41
       },
       "id": 360,
       "links": [],
@@ -1977,7 +1727,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1993,7 +1744,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 48
+        "y": 41
       },
       "id": 361,
       "links": [],
@@ -2037,7 +1788,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 57
+        "y": 50
       },
       "id": 356,
       "panels": [],
@@ -2092,7 +1843,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2121,7 +1873,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 51
       },
       "id": 357,
       "links": [],
@@ -2170,7 +1922,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 67
+        "y": 60
       },
       "id": 354,
       "panels": [],
@@ -2226,7 +1978,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2255,7 +2008,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 68
+        "y": 61
       },
       "id": 355,
       "links": [],
@@ -2345,7 +2098,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2374,7 +2128,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 68
+        "y": 61
       },
       "id": 353,
       "links": [],
@@ -2422,7 +2176,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 77
+        "y": 70
       },
       "id": 334,
       "panels": [],
@@ -2480,7 +2234,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -2492,7 +2247,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 78
+        "y": 71
       },
       "id": 359,
       "links": [],
@@ -2519,16 +2274,21 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sys_wg",
+          "expr": "increase(sys_wg[60m])",
           "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "instant": false,
+          "interval": "60m",
           "intervalFactor": 1,
           "legendFormat": "{{type}}",
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
-      "title": "Traffic",
+      "title": "Traffic Per Hour",
       "transformations": [],
       "type": "timeseries"
     },
@@ -2538,7 +2298,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 87
+        "y": 80
       },
       "id": 337,
       "panels": [],
@@ -2596,7 +2356,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -2608,7 +2369,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 88
+        "y": 81
       },
       "id": 362,
       "links": [],
@@ -2713,7 +2474,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -2725,7 +2487,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 88
+        "y": 81
       },
       "id": 363,
       "links": [],
@@ -2785,7 +2547,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 97
+        "y": 90
       },
       "id": 327,
       "panels": [],
@@ -2843,7 +2605,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -2855,7 +2618,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 98
+        "y": 91
       },
       "id": 364,
       "links": [],
@@ -2901,7 +2664,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 107
+        "y": 100
       },
       "id": 330,
       "panels": [],
@@ -2955,7 +2718,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2971,7 +2735,7 @@
         "h": 9,
         "w": 16,
         "x": 0,
-        "y": 108
+        "y": 101
       },
       "id": 329,
       "links": [],
@@ -3035,7 +2799,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3088,7 +2853,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 108
+        "y": 101
       },
       "id": 346,
       "links": [],
@@ -3187,6 +2952,6 @@
   "timezone": "browser",
   "title": "System",
   "uid": "c80f4a3d-2467-4640-b3e8-391033e95342",
-  "version": 66,
+  "version": 80,
   "weekStart": ""
 }
