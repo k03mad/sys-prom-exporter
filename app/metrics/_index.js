@@ -13,5 +13,6 @@ export {default as sys_ports} from './sys_ports.js';
 export {default as sys_procs} from './sys_procs.js';
 export {default as sys_systemd_count} from './sys_systemd_count.js';
 export {default as sys_systemd_failed} from './sys_systemd_failed.js';
+export {default as sys_ufw} from './sys_ufw.js';
 export {default as sys_uptime} from './sys_uptime.js';
 export {default as sys_wg} from './sys_wg.js';
