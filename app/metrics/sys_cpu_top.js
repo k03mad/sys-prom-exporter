@@ -13,9 +13,9 @@ export default {
         ctx.reset();
 
         const stdout = await run(CMD);
-        const cpuGroups = stdout.match(RE.cpu).groups;
+        const data = stdout.match(RE).groups;
 
-        Object.entries(cpuGroups).forEach(([type, num]) => {
+        Object.entries(data).forEach(([type, num]) => {
             ctx.labels(type).set(Number(num.replace(',', '.')));
         });
     },
