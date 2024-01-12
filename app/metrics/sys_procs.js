@@ -18,7 +18,7 @@ export default {
         const table = stdout.split('\n');
 
         const data = await Promise.all(table.map(async row => {
-            const [,pid, cpu, mem, ...proc] = row.split(/\s+/);
+            const [, pid, cpu, mem, ...proc] = row.split(/\s+/);
             const cpuNum = Number(cpu);
             const memNum = Number(mem);
 
