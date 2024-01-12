@@ -23,14 +23,17 @@ export default {
             const memNum = Number(mem);
 
             if (cpuNum > 0 || memNum > 0) {
+                let path = '';
+
                 try {
-                    const path = await pathByPid(pid);
-                    return {name: `${path} ${proc.join(' ')}`, cpu: cpuNum, mem: memNum};
+                    path = await pathByPid(pid);
                 } catch (err) {
                     if (!err.message?.includes('No such process')) {
                         throw err;
                     }
                 }
+
+                return {name: `${path} ${proc.join(' ')}`.trim(), cpu: cpuNum, mem: memNum};
             }
         }));
 
