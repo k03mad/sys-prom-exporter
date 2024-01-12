@@ -1,6 +1,9 @@
 import cp from 'node:child_process';
 import util from 'node:util';
 
+import _debug from 'debug';
+
+const debug = _debug('mad:shell');
 const exec = util.promisify(cp.exec);
 
 /**
@@ -8,6 +11,8 @@ const exec = util.promisify(cp.exec);
  * @returns {Promise<{stdout: string, stderr: string}>}
  */
 export const run = async runString => {
+    debug(runString);
+
     const {stdout} = await exec(runString, {shell: '/bin/bash'});
     return stdout?.trim();
 };
