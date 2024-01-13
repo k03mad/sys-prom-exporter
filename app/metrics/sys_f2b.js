@@ -1,13 +1,9 @@
-import {IPWhois} from '@k03mad/dns-leak';
+import {ip2geo} from '@k03mad/ip2geo';
 
-import {countDups} from '../helpers/object.js';
+import env from '../../env.js';
+import {countDupsBy} from '../helpers/object.js';
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
-
-const whois = new IPWhois({
-    ipRequestsCacheExpireSec: Number.POSITIVE_INFINITY,
-    requestsRps: 10,
-});
 
 const CMD = 'fail2ban-client status';
 
@@ -39,19 +35,16 @@ export default {
 
             await Promise.all(stats.map(async ([name, value]) => {
                 if (name === 'ips') {
-                    if (false) { //value) {
+                    if (value) {
                         const ips = value.split(/\s+/);
 
                         await Promise.all(ips.map(async ip => {
-                            const ipInfo = await whois.getIpInfo({ip});
+                            const data = await ip2geo(ip, {
+                                cacheDir: env.geoip.cacheDir,
+                            });
 
-                            if (ipInfo.country) {
-                                countDups(countries, `${ipInfo.flag?.emoji || ''} ${ipInfo.country}`.trim());
-                            }
-
-                            if (ipInfo.connection?.isp) {
-                                countDups(isps, ipInfo.connection.isp);
-                            }
+                            countDupsBy(`${data.emoji} ${data.country}`, countries);
+                            countDupsBy(data.isp, isps);
                         }));
                     }
                 } else {

@@ -1,4 +1,4 @@
-import {countDups} from '../helpers/object.js';
+import {countDupsBy} from '../helpers/object.js';
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
@@ -27,7 +27,7 @@ export default {
                 const status = cells[3];
 
                 if (service?.includes(FIND_INCLUDES)) {
-                    countDups(counters, status);
+                    countDupsBy(status, counters);
                 }
             }
         });

@@ -1,8 +1,8 @@
 /**
- * @param {object} obj
  * @param {string} key
- * @param {string|number} count
+ * @param {object} obj
+ * @param {number} count
  */
-export const countDups = (obj, key, count = 1) => {
-    obj[key] = obj[key] ? obj[key] + Number(count) : Number(count);
+export const countDupsBy = (key, obj, count = 1) => {
+    obj[key] = obj[key] ? obj[key] + count : count;
 };
