@@ -4,7 +4,10 @@ import {countDups} from '../helpers/object.js';
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const whois = new IPWhois({ipRequestsCacheExpireSec: Number.POSITIVE_INFINITY});
+const whois = new IPWhois({
+    ipRequestsCacheExpireSec: Number.POSITIVE_INFINITY,
+    requestsRps: 10,
+});
 
 const CMD = 'fail2ban-client status';
 
