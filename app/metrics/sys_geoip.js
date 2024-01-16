@@ -19,7 +19,7 @@ export default {
 
         await Promise.all(cacheDir.map(async file => {
             const data = await fs.readFile(path.join(env.geoip.cacheDir, file), {encoding: 'utf8'});
-            entries += data.split('\n').length;
+            entries += data.split('\n').filter(Boolean).length;
         }));
 
         ctx.labels('entries').set(entries);
