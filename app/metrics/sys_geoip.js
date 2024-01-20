@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import {cacheStorage} from '@k03mad/ip2geo';
+
 import env from '../../env.js';
 import {getCurrentFilename} from '../helpers/paths.js';
 
@@ -23,5 +25,6 @@ export default {
         }));
 
         ctx.labels('entries').set(entries);
+        ctx.labels('map_entries').set(cacheStorage.size);
     },
 };
