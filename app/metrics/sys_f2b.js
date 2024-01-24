@@ -41,7 +41,6 @@ export default {
                         await Promise.all(ips.map(async ip => {
                             const data = await ip2geo(ip, {
                                 cacheDir: env.geoip.cacheDir,
-                                cacheMapMaxEntries: 0,
                             });
 
                             countDupsBy(`${data.emoji} ${data.country}`, countries);
