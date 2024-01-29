@@ -3,6 +3,7 @@
 export {default as sys_apt} from './sys_apt.js';
 export {default as sys_certbot} from './sys_certbot.js';
 export {default as sys_cpu} from './sys_cpu.js';
+export {default as sys_cpus} from './sys_cpus.js';
 export {default as sys_f2b} from './sys_f2b.js';
 export {default as sys_fs} from './sys_fs.js';
 export {default as sys_geoip} from './sys_geoip.js';
