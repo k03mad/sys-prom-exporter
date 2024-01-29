@@ -1,24 +1,30 @@
-import os from 'node:os';
-
 import {getCurrentFilename} from '../helpers/paths.js';
+import {run} from '../helpers/shell.js';
+
+const CMD = 'cat /proc/stat';
+
+const stats = [
+    'user', 'nice', 'system', 'idle', 'iowait',
+    'irq', 'softirq',
+    'steal',
+    'guest', 'gnice',
+];
 
 export default {
     name: getCurrentFilename(import.meta.url),
-    help: 'os.cpus',
-    labelNames: [
-        'name',
-        'type',
-    ],
+    help: CMD,
+    labelNames: ['type'],
 
-    collect(ctx) {
+    async collect(ctx) {
         ctx.reset();
 
-        const cpus = os.cpus();
+        const stdout = await run(CMD);
+        const [cpu] = stdout.split('\n');
 
-        cpus.forEach((cpu, i) => {
-            Object.entries(cpu.times).forEach(([type, value]) => {
-                ctx.labels(`cpu${i}`, type).set(value);
-            });
+        const row = cpu.split(/\s+/);
+
+        stats.forEach((type, i) => {
+            ctx.labels(type).set(Number(row[i + 1]));
         });
     },
 };
