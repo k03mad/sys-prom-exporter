@@ -16,14 +16,14 @@
     "node": ">=21"
   },
   "dependencies": {
-    "@k03mad/ip2geo": "5.0.1",
+    "@k03mad/ip2geo": "6.1.0",
     "@k03mad/simple-prom": "2.1.0",
     "debug": "4.3.4"
   },
   "devDependencies": {
     "@k03mad/eslint-config": "20.2.0",
     "eslint": "8.56.0",
-    "husky": "9.0.6",
+    "husky": "9.0.7",
     "nodemon": "3.0.3"
   },
   "scripts": {

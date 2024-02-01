@@ -39,12 +39,13 @@ export default {
                         const ips = value.split(/\s+/);
 
                         await Promise.all(ips.map(async ip => {
-                            const data = await ip2geo(ip, {
+                            const {country, countryEmoji = '', connectionIsp} = await ip2geo({
+                                ip,
                                 cacheDir: env.geoip.cacheDir,
                             });
 
-                            countDupsBy(`${data.emoji} ${data.country}`, countries);
-                            countDupsBy(data.isp, isps);
+                            countDupsBy(`${countryEmoji} ${country}`.trim(), countries);
+                            countDupsBy(connectionIsp, isps);
                         }));
                     }
                 } else {

@@ -8,7 +8,7 @@ const env = {
     },
     debug: process.env.DEBUG,
     geoip: {
-        cacheDir: `${os.homedir()}/.ip2geo`,
+        cacheDir: `${os.homedir()}/.ip2geo-cache`,
     },
 };
 
