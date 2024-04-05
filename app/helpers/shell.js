@@ -1,10 +1,10 @@
 import cp from 'node:child_process';
-import util from 'node:util';
+import {promisify} from 'node:util';
 
 import _debug from 'debug';
 
 const debug = _debug('mad:shell');
-const exec = util.promisify(cp.exec);
+const exec = promisify(cp.exec);
 
 /**
  * @param {string} runString
