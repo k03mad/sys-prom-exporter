@@ -28,11 +28,7 @@ export default {
 
                 try {
                     path = await pathByPid(pid);
-                } catch (err) {
-                    if (!err.message?.includes('No such process')) {
-                        throw err;
-                    }
-                }
+                } catch {}
 
                 return {name: `${path} ${proc.join(' ')}`.trim(), cpu: cpuNum, mem: memNum};
             }
