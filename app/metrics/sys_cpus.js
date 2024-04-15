@@ -20,7 +20,7 @@ export default {
 
         const stdout = await run(CMD);
         const [cpu] = stdout.split('\n');
-        const cpuCount = Number([...stdout.matchAll(/cpu(\d)/g)].pop()[1]);
+        const cpuCount = Number([...stdout.matchAll(/cpu(\d)/g)].pop()[1]) + 1;
 
         const row = cpu.split(/\s+/);
 
