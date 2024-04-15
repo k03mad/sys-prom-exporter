@@ -31,7 +31,7 @@ export default {
 
         ctx.labels('Buffers').set(data.Buffers);
         ctx.labels('Cached').set(data.Cached);
-        ctx.labels('HardwareCorrupted').set(data.HardwareCorrupted);
+        ctx.labels('HardwareCorrupted').set(data.HardwareCorrupted || 0);
         ctx.labels('PageTables').set(data.PageTables);
         ctx.labels('Slab').set(data.Slab);
 
