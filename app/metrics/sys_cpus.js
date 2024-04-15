@@ -20,11 +20,12 @@ export default {
 
         const stdout = await run(CMD);
         const [cpu] = stdout.split('\n');
+        const cpuCount = Number([...stdout.matchAll(/cpu(\d)/g)].pop()[1]);
 
         const row = cpu.split(/\s+/);
 
         stats.forEach((type, i) => {
-            ctx.labels(type).set(Number(row[i + 1]));
+            ctx.labels(type).set(Number(row[i + 1]) / cpuCount);
         });
     },
 };
