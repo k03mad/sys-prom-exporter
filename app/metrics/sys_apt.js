@@ -1,7 +1,7 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const CMD = 'sudo apt-get update && sudo apt-get upgrade -u -s';
+const CMD = 'apt-get update && apt-get upgrade -u -s';
 const FIND_STARTS = 'Inst';
 
 const RUN_ONLY_EVERY_MS = 3_600_000;
