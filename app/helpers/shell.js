@@ -22,6 +22,6 @@ export const run = async runString => {
  * @returns {Promise<string>}
  */
 export const pathByPid = async pid => {
-    const stdout = await run(`pwdx ${pid}`);
+    const stdout = await run(`sudo pwdx ${pid}`);
     return stdout.replace(/^\d+:\s+/, '');
 };
