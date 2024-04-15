@@ -8,8 +8,7 @@ const env = {
     },
     metrics: {
         turnOff: process.env.npm_config_turnoff
-        || process.env.SYS_EXPORTER_METRICS_TURN_OFF
-        || '',
+        || process.env.SYS_EXPORTER_METRICS_TURN_OFF,
     },
     debug: process.env.DEBUG,
     geoip: {
