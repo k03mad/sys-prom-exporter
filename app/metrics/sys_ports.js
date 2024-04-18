@@ -18,10 +18,12 @@ export default {
         const data = await Promise.all(table.map(async (row, i) => {
             // header
             if (i > 0) {
-                const {name, port, pid} = row.match(RE).groups;
-                const path = await pathByPid(pid);
+                const {name, port, pid} = row.match(RE)?.groups || {};
 
-                return {name: `${path} ${name}`, port: Number(port)};
+                if (pid) {
+                    const path = await pathByPid(pid);
+                    return {name: `${path} ${name}`, port: Number(port)};
+                }
             }
         }));
 
