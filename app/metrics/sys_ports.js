@@ -1,7 +1,7 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {pathByPid, run} from '../helpers/shell.js';
 
-const CMD = 'ss -lntp';
+const CMD = 'sudo ss -lntp';
 const RE = /[\d*\]]:(?<port>\d+).+users:\({2}"(?<name>.+?)",pid=(?<pid>\d+)/;
 
 export default {
@@ -18,12 +18,10 @@ export default {
         const data = await Promise.all(table.map(async (row, i) => {
             // header
             if (i > 0) {
-                const {name, port, pid} = row.match(RE)?.groups || {};
+                const {name, port, pid} = row.match(RE).groups;
+                const path = await pathByPid(pid);
 
-                if (pid) {
-                    const path = await pathByPid(pid);
-                    return {name: `${path} ${name}`, port: Number(port)};
-                }
+                return {name: `${path} ${name}`, port: Number(port)};
             }
         }));
 
