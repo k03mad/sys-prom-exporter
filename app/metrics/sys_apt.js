@@ -18,6 +18,8 @@ export default {
             || (Date.now() - timestamp) > RUN_ONLY_EVERY_MS
         ) {
             timestamp = Date.now();
+            ctx.reset();
+
             const stdout = await run(CMD);
 
             const updates = stdout
@@ -25,7 +27,6 @@ export default {
                 .filter(el => el.startsWith(FIND_STARTS))
                 .length;
 
-            ctx.reset();
             ctx.labels('updates').set(updates);
         }
     },
