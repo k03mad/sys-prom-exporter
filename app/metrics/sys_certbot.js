@@ -1,7 +1,7 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const CMD = 'certbot certificates';
+const CMD = 'sudo certbot certificates';
 
 const RE = {
     domains: /Domains: (.+)/g,
