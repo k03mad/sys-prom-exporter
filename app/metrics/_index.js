@@ -6,6 +6,7 @@ export {default as sys_cpus} from './sys_cpus.js';
 export {default as sys_f2b} from './sys_f2b.js';
 export {default as sys_fs} from './sys_fs.js';
 export {default as sys_geoip} from './sys_geoip.js';
+export {default as sys_io} from './sys_io.js';
 export {default as sys_load} from './sys_load.js';
 export {default as sys_mem} from './sys_mem.js';
 export {default as sys_network} from './sys_network.js';
