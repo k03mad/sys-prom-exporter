@@ -23,8 +23,8 @@ export default {
             .map(elem => elem.split(/\s+/));
 
         table.forEach(elem => {
-            ctx.labels(elem[0], 'read').set(elem[5]);
-            ctx.labels(elem[0], 'write').set(elem[6]);
+            ctx.labels(elem[0], 'read').set(Number(elem[5]));
+            ctx.labels(elem[0], 'write').set(Number(elem[6]));
         });
     },
 };
