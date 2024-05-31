@@ -25,7 +25,14 @@ export default {
             // headers
             if (i >= 4) {
                 const [num, port, rule1, rule2, ip, ...comment] = row.replace(RE, '$1').split(/\s+/);
-                ctx.labels(num, port, `${rule1} ${rule2}`, ip, comment.join(' ')).set(1);
+
+                const commentTrim = comment
+                    .join(' ')
+                    .trim()
+                    .replace(/^#/, '')
+                    .trim();
+
+                ctx.labels(num, port, `${rule1} ${rule2}`, ip, commentTrim).set(1);
             }
         });
     },
