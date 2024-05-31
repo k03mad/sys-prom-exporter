@@ -9,7 +9,7 @@ import {getCurrentFilename} from '../helpers/paths.js';
 export default {
     name: getCurrentFilename(import.meta.url),
     help: 'geoip lib stats',
-    labelNames: ['type', 'name'],
+    labelNames: ['name', 'type'],
 
     async collect(ctx) {
         ctx.reset();
