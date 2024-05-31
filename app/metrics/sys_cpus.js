@@ -4,10 +4,16 @@ import {run} from '../helpers/shell.js';
 const CMD = 'cat /proc/stat';
 
 const stats = [
-    'user', 'nice', 'system', 'idle', 'iowait',
-    'irq', 'softirq',
+    'user',
+    'nice',
+    'system',
+    'idle',
+    'iowait',
+    'irq',
+    'softirq',
     'steal',
-    'guest', 'gnice',
+    'guest',
+    'gnice',
 ];
 
 export default {

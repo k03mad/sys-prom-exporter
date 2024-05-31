@@ -9,7 +9,7 @@ import {getCurrentFilename} from '../helpers/paths.js';
 export default {
     name: getCurrentFilename(import.meta.url),
     help: 'geoip lib stats',
-    labelNames: ['type'],
+    labelNames: ['type', 'name'],
 
     async collect(ctx) {
         ctx.reset();
@@ -18,13 +18,21 @@ export default {
         ctx.labels('files').set(cacheDir.length);
 
         let entries = 0;
+        const prefixEntries = {};
 
         await Promise.all(cacheDir.map(async file => {
             const data = await fs.readFile(path.join(env.geoip.cacheDir, file), {encoding: 'utf8'});
-            entries += data.split('\n').filter(Boolean).length;
+            const prefixCount = data.split('\n').filter(Boolean).length;
+
+            entries += prefixCount;
+            prefixEntries[file.split('_')[0]] = prefixCount;
         }));
 
-        ctx.labels('entries').set(entries);
-        ctx.labels('map_entries').set(cacheStorage.size);
+        Object.entries(prefixEntries).forEach(([prefix, count]) => {
+            ctx.labels('prefix_entries', prefix).set(count);
+        });
+
+        ctx.labels('entries', null).set(entries);
+        ctx.labels('map_entries', null).set(cacheStorage.size);
     },
 };
