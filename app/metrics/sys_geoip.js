@@ -15,7 +15,6 @@ export default {
         ctx.reset();
 
         const cacheDir = await fs.readdir(env.geoip.cacheDir);
-        ctx.labels('files').set(cacheDir.length);
 
         let entries = 0;
         const prefixEntries = {};
@@ -28,11 +27,12 @@ export default {
             prefixEntries[file.split('_')[0]] = prefixCount;
         }));
 
+        ctx.labels('files', null).set(cacheDir.length);
+        ctx.labels('entries', null).set(entries);
+        ctx.labels('map_entries', null).set(cacheStorage.size);
+
         Object.entries(prefixEntries).forEach(([prefix, count]) => {
             ctx.labels('prefix_entries', prefix).set(count);
         });
-
-        ctx.labels('entries', null).set(entries);
-        ctx.labels('map_entries', null).set(cacheStorage.size);
     },
 };
