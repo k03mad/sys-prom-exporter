@@ -1,4 +1,4 @@
-name: SSH
+name: SSH-VDS
 
 on:
   push:
