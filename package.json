@@ -17,11 +17,11 @@
   },
   "dependencies": {
     "@k03mad/ip2geo": "7.2.0",
-    "@k03mad/simple-prom": "3.0.0",
+    "@k03mad/simple-prom": "3.1.1",
     "debug": "4.3.5"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "22.3.0",
+    "@k03mad/eslint-config": "22.4.0",
     "eslint": "8.57.0",
     "husky": "9.0.11",
     "nodemon": "3.1.4"
