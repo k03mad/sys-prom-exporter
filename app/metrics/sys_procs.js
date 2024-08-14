@@ -1,3 +1,5 @@
+import {logError} from '@k03mad/simple-log';
+
 import {getCurrentFilename} from '../helpers/paths.js';
 import {pathByPid, run} from '../helpers/shell.js';
 
@@ -28,7 +30,9 @@ export default {
 
                 try {
                     path = await pathByPid(pid);
-                } catch {}
+                } catch (err) {
+                    logError([`pathByPid: ${pid}`, err]);
+                }
 
                 return {name: `${path} ${proc.join(' ')}`.trim(), cpu: cpuNum, mem: memNum};
             }

@@ -11,6 +11,9 @@ importers:
       '@k03mad/ip2geo':
         specifier: 7.4.0
         version: 7.4.0
+      '@k03mad/simple-log':
+        specifier: 2.3.0
+        version: 2.3.0
       '@k03mad/simple-prom':
         specifier: 3.2.1
         version: 3.2.1
