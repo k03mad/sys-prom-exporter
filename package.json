@@ -19,7 +19,7 @@
     "@k03mad/ip2geo": "10.3.0",
     "@k03mad/simple-log": "4.1.0",
     "@k03mad/simple-prom": "3.3.0",
-    "debug": "4.3.6"
+    "debug": "4.3.7"
   },
   "devDependencies": {
     "@k03mad/eslint-config": "23.4.0",
