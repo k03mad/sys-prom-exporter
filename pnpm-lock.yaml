@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 10.4.0
-        version: 10.4.0
+        specifier: 10.5.0
+        version: 10.5.0
       '@k03mad/simple-log':
         specifier: 4.2.0
         version: 4.2.0
@@ -743,8 +743,8 @@ packages:
     resolution: {integrity: sha512-1Y62MN2PrTrofGNK8d5sxdVbO9bZMJlYguFfAwbiew8jMNyiRrPCxYi3HBctgyEBCZaTaBl6OxIC0XkTk4vw1w==}
     engines: {node: '>=20'}
 
-  '@k03mad/ip2geo@10.4.0':
-    resolution: {integrity: sha512-PA1jIFWB5ugqasZYBTB651bLQlZ65r7gzcm+1KQOis814lepT+QLCcrlNm5kDnFteExW74m0WyaDh+At7JdcZA==}
+  '@k03mad/ip2geo@10.5.0':
+    resolution: {integrity: sha512-WF0D169do08etPgiS113gS8FgU+M9Ia3HepfujHpg6Q2DQjjjvULxEfna6WO+pttAC2KIPRb92n+2TgFLhBkUQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -3675,7 +3675,7 @@ snapshots:
       - typescript
       - vue-eslint-parser
 
-  '@k03mad/ip2geo@10.4.0':
+  '@k03mad/ip2geo@10.5.0':
     dependencies:
       '@k03mad/request': 6.3.0
       '@k03mad/simple-log': 4.2.0
