@@ -42,6 +42,7 @@ export default {
                             const {country, countryEmoji = '', connectionIsp} = await ip2geo({
                                 ip,
                                 cacheDir: env.geoip.cacheDir,
+                                cacheMapMaxEntries: env.geoip.cacheMapMaxEntries,
                             });
 
                             countDupsBy(`${countryEmoji} ${country}`.trim(), countries);
