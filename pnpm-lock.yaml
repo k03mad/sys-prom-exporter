@@ -9,21 +9,21 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 11.0.0
-        version: 11.0.0
+        specifier: 11.1.0
+        version: 11.1.0
       '@k03mad/simple-log':
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 5.1.0
+        version: 5.1.0
       '@k03mad/simple-prom':
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.1.0
+        version: 4.1.0
       debug:
         specifier: 4.3.7
         version: 4.3.7(supports-color@5.5.0)
     devDependencies:
       '@k03mad/eslint-config':
-        specifier: 26.0.0
-        version: 26.0.0(eslint@9.15.0)(typescript@5.6.2)(vue-eslint-parser@9.4.3(eslint@9.15.0))
+        specifier: 26.3.0
+        version: 26.3.0(eslint@9.15.0)(typescript@5.6.2)(vue-eslint-parser@9.4.3(eslint@9.15.0))
       eslint:
         specifier: 9.15.0
         version: 9.15.0
@@ -57,10 +57,6 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
-
-  '@eslint-community/regexpp@4.11.1':
-    resolution: {integrity: sha512-m4DVN9ZqskZoLU5GlWZadwDnYo3vAEydiUayB9widCl9ffWx2IvPnp6n3on5rJmziJSw9Bv+Z3ChDVdMwXCY8Q==}
-    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
   '@eslint-community/regexpp@4.12.1':
     resolution: {integrity: sha512-CCZCDJuduB9OUkFkY2IgppNZMi2lBQgD2qzwXkEia16cge2pijY/aXi96CJMquDMn3nJdlPV1A5KrJEXwfLNzQ==}
@@ -110,37 +106,37 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
-  '@k03mad/eslint-config@26.0.0':
-    resolution: {integrity: sha512-829vSPfIO9/H9mdQmCsU8MM45SmViriXItF8UDHtp1bihaomNqK4ptQY5xrA01F+vZDg4KI7s7eyznSDwtdq8Q==}
+  '@k03mad/eslint-config@26.3.0':
+    resolution: {integrity: sha512-XVzRaclI3YvL1i+lvjUs3cPDeLl0ds74jteA3i4PkhVg9gfLfdAPX52VqDHwXd5nMo517eMeFb2+SHZCKDhgTQ==}
     engines: {node: '>=22'}
 
-  '@k03mad/ip2geo@11.0.0':
-    resolution: {integrity: sha512-aG8iy5RgMq0qLxmnLVs83+qOfh2BDsx8c0gC2dxT5sY2uKWfsRyuTPb0fU311RWwnJByevHdagM7NgoPaH22tQ==}
+  '@k03mad/ip2geo@11.1.0':
+    resolution: {integrity: sha512-LqK43Cg/yg2tgdaYTQ2MlkRN8ryGme7dbGWCLZb6O0xSXWvr/DZME0B9Grbrm7ITXaROuRGRMoGluDJeggT+rA==}
     engines: {node: '>=22'}
     hasBin: true
 
-  '@k03mad/request@6.4.0':
-    resolution: {integrity: sha512-6PsBP+jQqT2jfyoB3lWKxDz2qTcXfsecLwzwmyMzbD3+yTDL6J0f2AaRnLXgPKg88XiapoCrPVURkBLGsaJTaA==}
-    engines: {node: '>=20'}
-
-  '@k03mad/simple-date@3.1.0':
-    resolution: {integrity: sha512-IiWr+8p+C4UybZnRCGiNSRqft4NOdfFzpAxTnCs8wmc9ExkZ8fCSM3bpIf+K//HCg3OYhet7/kIY1fo+wSQYlQ==}
-    engines: {node: '>=20'}
+  '@k03mad/request@7.0.0':
+    resolution: {integrity: sha512-IFs5o9kFVdhm2EBgfdsAFKeERIqhXe0qDPq9uEFPCK/2BnQw/GgPtzxMsb/2CihD11EVzFPyy2cEluuWcxy2jA==}
+    engines: {node: '>=22'}
 
   '@k03mad/simple-date@4.0.0':
     resolution: {integrity: sha512-yngBMsp5zicI1Q+oPErNqdEUCCS3l5LRdtWfLhr4WUp9PAeU4TNBbp1udQd2revr9GOk/17W/d5JtbmptkBzrg==}
     engines: {node: '>=22'}
 
-  '@k03mad/simple-log@4.2.0':
-    resolution: {integrity: sha512-NcOLd1qVmbU6PZKnSwbtpmLV346oPR0A8TUkWL18eeDwiR6C98y1yuYwt32ryyz3c+kjGEeT6eA+FUeDP5C+VQ==}
-    engines: {node: '>=20'}
+  '@k03mad/simple-date@4.1.0':
+    resolution: {integrity: sha512-asGjWfxYwSNawN6j+jtBu/8ah+Gj+PlJC5U1rPM+QSPFzrs56tZzi6GaggtjbNfwNPC+hcmBqRSynKxkYFNetw==}
+    engines: {node: '>=22'}
 
   '@k03mad/simple-log@5.0.0':
     resolution: {integrity: sha512-jp2jrRX+tXb3Nb2v4v1VSrAkBBlMPuWb5igO52RPWckdmSvcfAQ4MuIrrotuW+hxnqaOB2nZ8F90G3owR4aXKA==}
     engines: {node: '>=22'}
 
-  '@k03mad/simple-prom@4.0.0':
-    resolution: {integrity: sha512-aPxgOU5TsBaWyGUaaaXE9nQ8/6IAMVgnRbb0A1+3XPddZk9+r0zT6fis9JkqkcmiBq3lpTsiH0Mes8ivwNFVJA==}
+  '@k03mad/simple-log@5.1.0':
+    resolution: {integrity: sha512-O/RTIL2W4mS5ubloZ4Ds+4DpB/oWqqaxHjCTEqwEF8/q4Zukey6ppnYzUkDPLSoM2jDMuJX0OFVAfvYCdShJFg==}
+    engines: {node: '>=22'}
+
+  '@k03mad/simple-prom@4.1.0':
+    resolution: {integrity: sha512-S48eqCYsHFoz2QSMdiLyxMOl1kxLi4WlDM+ZVNgnu2sLM4uX4gqU0jtFL3yojcGwW+fX36tLwzomkQpZFVLjWQ==}
     engines: {node: '>=22'}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1456,8 +1452,6 @@ snapshots:
       eslint: 9.15.0
       eslint-visitor-keys: 3.4.3
 
-  '@eslint-community/regexpp@4.11.1': {}
-
   '@eslint-community/regexpp@4.12.1': {}
 
   '@eslint/config-array@0.19.0':
@@ -1505,7 +1499,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
-  '@k03mad/eslint-config@26.0.0(eslint@9.15.0)(typescript@5.6.2)(vue-eslint-parser@9.4.3(eslint@9.15.0))':
+  '@k03mad/eslint-config@26.3.0(eslint@9.15.0)(typescript@5.6.2)(vue-eslint-parser@9.4.3(eslint@9.15.0))':
     dependencies:
       '@eslint/js': 9.15.0
       '@stylistic/eslint-plugin': 2.10.1(eslint@9.15.0)(typescript@5.6.2)
@@ -1527,17 +1521,17 @@ snapshots:
       - typescript
       - vue-eslint-parser
 
-  '@k03mad/ip2geo@11.0.0':
+  '@k03mad/ip2geo@11.1.0':
     dependencies:
-      '@k03mad/request': 6.4.0
-      '@k03mad/simple-log': 4.2.0
+      '@k03mad/request': 7.0.0
+      '@k03mad/simple-log': 5.0.0
       chalk: 5.3.0
       debug: 4.3.7(supports-color@5.5.0)
       is-ip: 5.0.1
     transitivePeerDependencies:
       - supports-color
 
-  '@k03mad/request@6.4.0':
+  '@k03mad/request@7.0.0':
     dependencies:
       chalk: 5.3.0
       debug: 4.3.7(supports-color@5.5.0)
@@ -1548,22 +1542,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@k03mad/simple-date@3.1.0': {}
-
   '@k03mad/simple-date@4.0.0': {}
 
-  '@k03mad/simple-log@4.2.0':
-    dependencies:
-      '@k03mad/simple-date': 3.1.0
+  '@k03mad/simple-date@4.1.0': {}
 
   '@k03mad/simple-log@5.0.0':
     dependencies:
       '@k03mad/simple-date': 4.0.0
 
-  '@k03mad/simple-prom@4.0.0':
+  '@k03mad/simple-log@5.1.0':
     dependencies:
-      '@k03mad/simple-date': 4.0.0
-      '@k03mad/simple-log': 5.0.0
+      '@k03mad/simple-date': 4.1.0
+
+  '@k03mad/simple-prom@4.1.0':
+    dependencies:
+      '@k03mad/simple-date': 4.1.0
+      '@k03mad/simple-log': 5.1.0
       chalk: 5.3.0
       compression: 1.7.5
       express: 4.21.1
@@ -1947,7 +1941,7 @@ snapshots:
   eslint-plugin-es-x@7.8.0(eslint@9.15.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.15.0)
-      '@eslint-community/regexpp': 4.11.1
+      '@eslint-community/regexpp': 4.12.1
       eslint: 9.15.0
       eslint-compat-utils: 0.5.1(eslint@9.15.0)
 
@@ -2017,7 +2011,7 @@ snapshots:
   eslint-plugin-regexp@2.7.0(eslint@9.15.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.15.0)
-      '@eslint-community/regexpp': 4.11.1
+      '@eslint-community/regexpp': 4.12.1
       comment-parser: 1.4.1
       eslint: 9.15.0
       jsdoc-type-pratt-parser: 4.1.0
@@ -2641,11 +2635,11 @@ snapshots:
 
   refa@0.12.1:
     dependencies:
-      '@eslint-community/regexpp': 4.11.1
+      '@eslint-community/regexpp': 4.12.1
 
   regexp-ast-analysis@0.7.1:
     dependencies:
-      '@eslint-community/regexpp': 4.11.1
+      '@eslint-community/regexpp': 4.12.1
       refa: 0.12.1
 
   regexp-tree@0.1.27: {}
@@ -2684,7 +2678,7 @@ snapshots:
 
   scslre@0.3.0:
     dependencies:
-      '@eslint-community/regexpp': 4.11.1
+      '@eslint-community/regexpp': 4.12.1
       refa: 0.12.1
       regexp-ast-analysis: 0.7.1
 
