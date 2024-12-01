@@ -22,8 +22,8 @@ importers:
         version: 4.3.7(supports-color@5.5.0)
     devDependencies:
       '@k03mad/eslint-config':
-        specifier: 26.3.0
-        version: 26.3.0(eslint@9.15.0)(typescript@5.6.2)(vue-eslint-parser@9.4.3(eslint@9.15.0))
+        specifier: 27.0.0
+        version: 27.0.0(eslint@9.15.0)(typescript@5.6.2)(vue-eslint-parser@9.4.3(eslint@9.15.0))
       eslint:
         specifier: 9.15.0
         version: 9.15.0
@@ -106,8 +106,8 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
-  '@k03mad/eslint-config@26.3.0':
-    resolution: {integrity: sha512-XVzRaclI3YvL1i+lvjUs3cPDeLl0ds74jteA3i4PkhVg9gfLfdAPX52VqDHwXd5nMo517eMeFb2+SHZCKDhgTQ==}
+  '@k03mad/eslint-config@27.0.0':
+    resolution: {integrity: sha512-f++2aTrQPgaXzXAXjLVKg/h78xnXGmxEsGynxVkFyG8T0K6bl3dNdV8YeInZMTxYtLB9xxzJ+uHsusI0ElMuoA==}
     engines: {node: '>=22'}
 
   '@k03mad/ip2geo@11.1.0':
@@ -1499,7 +1499,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
-  '@k03mad/eslint-config@26.3.0(eslint@9.15.0)(typescript@5.6.2)(vue-eslint-parser@9.4.3(eslint@9.15.0))':
+  '@k03mad/eslint-config@27.0.0(eslint@9.15.0)(typescript@5.6.2)(vue-eslint-parser@9.4.3(eslint@9.15.0))':
     dependencies:
       '@eslint/js': 9.15.0
       '@stylistic/eslint-plugin': 2.10.1(eslint@9.15.0)(typescript@5.6.2)
