@@ -35,7 +35,7 @@ export default {
 
             await Promise.all(stats.map(async ([name, value]) => {
                 if (name === 'ips') {
-                    if (value) {
+                    if (value && !globalThis.ip2geoLimitExceed) {
                         const ips = value.split(/\s+/);
 
                         await Promise.all(ips.map(async ip => {
