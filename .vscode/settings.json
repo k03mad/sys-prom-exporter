@@ -4,6 +4,7 @@
       "geoip",
       "isps",
       "pcpu",
-      "pmem"
+      "pmem",
+      "procs"
     ]
 }
