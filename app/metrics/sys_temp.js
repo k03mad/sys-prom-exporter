@@ -12,6 +12,6 @@ export default {
         ctx.reset();
 
         const cpuTemp = await run(CMD);
-        ctx.labels('cpu').set(Number(cpuTemp.trim()));
+        ctx.labels('cpu').set(Number(cpuTemp.trim()) / 1000);
     },
 };
