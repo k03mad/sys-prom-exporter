@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@k03mad/ip2geo": "11.5.1",
-    "@k03mad/simple-log": "5.2.0",
+    "@k03mad/simple-log": "5.2.1",
     "@k03mad/simple-prom": "4.3.0",
     "debug": "4.4.0"
   },

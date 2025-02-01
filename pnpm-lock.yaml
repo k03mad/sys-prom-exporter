@@ -12,8 +12,8 @@ importers:
         specifier: 11.5.1
         version: 11.5.1
       '@k03mad/simple-log':
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       '@k03mad/simple-prom':
         specifier: 4.3.0
         version: 4.3.0
@@ -123,8 +123,16 @@ packages:
     resolution: {integrity: sha512-y4mdQVErFRlQ/0knqAaCx1e9wFf53tNlL8ONDIgJdGCvzpCmdgtnHvvE1iK9d/AtFSsaN3RaEeNSsw8vfL8AbA==}
     engines: {node: '>=22'}
 
+  '@k03mad/simple-date@4.2.1':
+    resolution: {integrity: sha512-IwtccRqmGVbxB7UiyXo9+8G9JRa/n2RfbAoUjfnNeaVdNNTyR5RA6OvVWhFiHvL3TPD+GgzaZySusprdA5VgUA==}
+    engines: {node: '>=22'}
+
   '@k03mad/simple-log@5.2.0':
     resolution: {integrity: sha512-so5ms0KIMf1Q5GmyXQ+icYwT4sESR85rrHtYh80pSKRuA8mBXhHUS0HEidxOPYWsYi2ovbg4kZ7sZXSMFS72lA==}
+    engines: {node: '>=22'}
+
+  '@k03mad/simple-log@5.2.1':
+    resolution: {integrity: sha512-M3TNwngbMHAohZTdvC1rhfwyNM3K7nu5F4MqhWDhIMB+fqRJGyysvfwNGNVjWr9PSksaWnsOuNEaaTmWPiDpvg==}
     engines: {node: '>=22'}
 
   '@k03mad/simple-prom@4.3.0':
@@ -1529,9 +1537,15 @@ snapshots:
 
   '@k03mad/simple-date@4.2.0': {}
 
+  '@k03mad/simple-date@4.2.1': {}
+
   '@k03mad/simple-log@5.2.0':
     dependencies:
       '@k03mad/simple-date': 4.2.0
+
+  '@k03mad/simple-log@5.2.1':
+    dependencies:
+      '@k03mad/simple-date': 4.2.1
 
   '@k03mad/simple-prom@4.3.0':
     dependencies:
