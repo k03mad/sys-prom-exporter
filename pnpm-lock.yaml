@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 11.5.1
-        version: 11.5.1
+        specifier: 11.6.0
+        version: 11.6.0
       '@k03mad/simple-log':
         specifier: 5.2.0
         version: 5.2.0
@@ -110,21 +110,29 @@ packages:
     resolution: {integrity: sha512-VWn7bN3pSepxdtH2wVQi5QagRqG6PMmYUgz8pZKR5I1JwTUEKJoNQTqztjOnTejao7yuaWf+x/vJwzHE1txqNQ==}
     engines: {node: '>=22'}
 
-  '@k03mad/ip2geo@11.5.1':
-    resolution: {integrity: sha512-Cmwdv85BBmTtpg86Mpkn3d7p899Y/TzmcZ49EYfylVeyIvT8LLcckKbPJEBugfR3D3UBU+XYO1aKXtBI6Su3ig==}
+  '@k03mad/ip2geo@11.6.0':
+    resolution: {integrity: sha512-D0hCPJHzDXLNpijDQwaqGD00nC2C/qRZTj/E9qZCz9ySnM2xOAXnmXTRs1BfbjbKsBEq732/cGiKjgj7UNV+JA==}
     engines: {node: '>=22'}
     hasBin: true
 
-  '@k03mad/request@7.6.2':
-    resolution: {integrity: sha512-YcfIhilSbK1N0rXs53cozeKPk8mIfBBK2arYs+fZPIE0ZQDp1y2mQgzZqJMCNypq+ZEYtRjMjP0rlm6oyhf1zQ==}
+  '@k03mad/request@7.7.0':
+    resolution: {integrity: sha512-li60dQR3T9mQEZpEXqqHdvtDtLhrypYhL2WFtH7c5hAMc5Um6/rn1fKD2asjGipu9PN/oOw5xmAeepoVhP2HAA==}
     engines: {node: '>=22'}
 
   '@k03mad/simple-date@4.2.0':
     resolution: {integrity: sha512-y4mdQVErFRlQ/0knqAaCx1e9wFf53tNlL8ONDIgJdGCvzpCmdgtnHvvE1iK9d/AtFSsaN3RaEeNSsw8vfL8AbA==}
     engines: {node: '>=22'}
 
+  '@k03mad/simple-date@4.2.1':
+    resolution: {integrity: sha512-IwtccRqmGVbxB7UiyXo9+8G9JRa/n2RfbAoUjfnNeaVdNNTyR5RA6OvVWhFiHvL3TPD+GgzaZySusprdA5VgUA==}
+    engines: {node: '>=22'}
+
   '@k03mad/simple-log@5.2.0':
     resolution: {integrity: sha512-so5ms0KIMf1Q5GmyXQ+icYwT4sESR85rrHtYh80pSKRuA8mBXhHUS0HEidxOPYWsYi2ovbg4kZ7sZXSMFS72lA==}
+    engines: {node: '>=22'}
+
+  '@k03mad/simple-log@5.2.1':
+    resolution: {integrity: sha512-M3TNwngbMHAohZTdvC1rhfwyNM3K7nu5F4MqhWDhIMB+fqRJGyysvfwNGNVjWr9PSksaWnsOuNEaaTmWPiDpvg==}
     engines: {node: '>=22'}
 
   '@k03mad/simple-prom@4.3.0':
@@ -250,8 +258,8 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  ansi-regex@6.0.1:
-    resolution: {integrity: sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==}
+  ansi-regex@6.1.0:
+    resolution: {integrity: sha512-7HSX4QQb4CspciLpVFwyRe79O3xsIZDDLER21kERQ71oaPodF8jL725AgJMFAYbooIqolJoRLuM81SpeUkpkvA==}
     engines: {node: '>=12'}
 
   ansi-styles@3.2.1:
@@ -1055,12 +1063,12 @@ packages:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
     engines: {node: '>=10'}
 
-  p-queue@8.0.1:
-    resolution: {integrity: sha512-NXzu9aQJTAzbBqOt2hwsR63ea7yvxJc0PwN/zobNAudYfb1B7R08SzB4TsLeSbUCuG467NhnoT0oO6w1qRO+BA==}
+  p-queue@8.1.0:
+    resolution: {integrity: sha512-mxLDbbGIBEXTJL0zEx8JIylaj3xQ7Z/7eEVjcF9fJX4DBiH9oqe+oahYnlKKxm0Ci9TlWTyhSHgygxMxjIB2jw==}
     engines: {node: '>=18'}
 
-  p-timeout@6.1.2:
-    resolution: {integrity: sha512-UbD77BuZ9Bc9aABo74gfXhNvzC9Tx7SxtHSh1fxvx3jTLLYvmVhiQZZrJzqqU0jKbN32kb5VOKiLEQI/3bIjgQ==}
+  p-timeout@6.1.4:
+    resolution: {integrity: sha512-MyIV3ZA/PmyBN/ud8vV9XzwTrNtR4jFrObymZYnZqMmW0zA8Z17vnT0rBgFE/TlohB+YCHqXMgZzb3Csp49vqg==}
     engines: {node: '>=14.16'}
 
   p-try@2.2.0:
@@ -1361,8 +1369,8 @@ packages:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
 
-  type-fest@4.27.0:
-    resolution: {integrity: sha512-3IMSWgP7C5KSQqmo1wjhKrwsvXAtF33jO3QY+Uy++ia7hqvgSK6iXbbg5PbDBc1P2ZbNEDgejOrN4YooXvhwCw==}
+  type-fest@4.33.0:
+    resolution: {integrity: sha512-s6zVrxuyKbbAsSAD5ZPTB77q4YIdRctkTbJ2/Dqlinwz+8ooH2gd+YA7VA6Pa93KML9GockVvoxjZ2vHP+mu8g==}
     engines: {node: '>=16'}
 
   type-is@1.6.18:
@@ -1506,22 +1514,22 @@ snapshots:
       - supports-color
       - typescript
 
-  '@k03mad/ip2geo@11.5.1':
+  '@k03mad/ip2geo@11.6.0':
     dependencies:
-      '@k03mad/request': 7.6.2
-      '@k03mad/simple-log': 5.2.0
+      '@k03mad/request': 7.7.0
+      '@k03mad/simple-log': 5.2.1
       chalk: 5.4.1
       debug: 4.4.0(supports-color@5.5.0)
       is-ip: 5.0.1
     transitivePeerDependencies:
       - supports-color
 
-  '@k03mad/request@7.6.2':
+  '@k03mad/request@7.7.0':
     dependencies:
       chalk: 5.4.1
       debug: 4.4.0(supports-color@5.5.0)
       got: 14.4.5
-      p-queue: 8.0.1
+      p-queue: 8.1.0
       pretty-bytes: 6.1.1
       strip-ansi: 7.1.0
     transitivePeerDependencies:
@@ -1529,9 +1537,15 @@ snapshots:
 
   '@k03mad/simple-date@4.2.0': {}
 
+  '@k03mad/simple-date@4.2.1': {}
+
   '@k03mad/simple-log@5.2.0':
     dependencies:
       '@k03mad/simple-date': 4.2.0
+
+  '@k03mad/simple-log@5.2.1':
+    dependencies:
+      '@k03mad/simple-date': 4.2.1
 
   '@k03mad/simple-prom@4.3.0':
     dependencies:
@@ -1684,7 +1698,7 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  ansi-regex@6.0.1: {}
+  ansi-regex@6.1.0: {}
 
   ansi-styles@3.2.1:
     dependencies:
@@ -2276,7 +2290,7 @@ snapshots:
       lowercase-keys: 3.0.0
       p-cancelable: 4.0.1
       responselike: 3.0.0
-      type-fest: 4.27.0
+      type-fest: 4.33.0
 
   graceful-fs@4.2.11: {}
 
@@ -2540,12 +2554,12 @@ snapshots:
     dependencies:
       p-limit: 3.1.0
 
-  p-queue@8.0.1:
+  p-queue@8.1.0:
     dependencies:
       eventemitter3: 5.0.1
-      p-timeout: 6.1.2
+      p-timeout: 6.1.4
 
-  p-timeout@6.1.2: {}
+  p-timeout@6.1.4: {}
 
   p-try@2.2.0: {}
 
@@ -2770,7 +2784,7 @@ snapshots:
 
   strip-ansi@7.1.0:
     dependencies:
-      ansi-regex: 6.0.1
+      ansi-regex: 6.1.0
 
   strip-indent@3.0.0:
     dependencies:
@@ -2831,7 +2845,7 @@ snapshots:
 
   type-fest@0.8.1: {}
 
-  type-fest@4.27.0: {}
+  type-fest@4.33.0: {}
 
   type-is@1.6.18:
     dependencies:
