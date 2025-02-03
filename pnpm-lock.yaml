@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 11.6.0
-        version: 11.6.0
+        specifier: 12.0.0
+        version: 12.0.0
       '@k03mad/simple-log':
         specifier: 5.2.1
         version: 5.2.1
@@ -110,13 +110,13 @@ packages:
     resolution: {integrity: sha512-aODT0B/ZcGESWq/Aa7YJ96CPjrdc+np7sv9fP+L8BXXe5cUV8l4uvGgwnQmxQ4lQpsxcIPHMSqHIJw8R3jkuuw==}
     engines: {node: '>=22'}
 
-  '@k03mad/ip2geo@11.6.0':
-    resolution: {integrity: sha512-D0hCPJHzDXLNpijDQwaqGD00nC2C/qRZTj/E9qZCz9ySnM2xOAXnmXTRs1BfbjbKsBEq732/cGiKjgj7UNV+JA==}
+  '@k03mad/ip2geo@12.0.0':
+    resolution: {integrity: sha512-WguTixQdjHrQZxvMAR8tnss3Z/8kpdlGA9PNQNGmfPZ1v2Z0UYhTR2trzDo9YW+kMkyR95PmN/z6C7FYreWFJg==}
     engines: {node: '>=22'}
     hasBin: true
 
-  '@k03mad/request@7.7.0':
-    resolution: {integrity: sha512-li60dQR3T9mQEZpEXqqHdvtDtLhrypYhL2WFtH7c5hAMc5Um6/rn1fKD2asjGipu9PN/oOw5xmAeepoVhP2HAA==}
+  '@k03mad/request@7.8.0':
+    resolution: {integrity: sha512-c8juMUYv5tHw6olag92Ka1ak8qKvSwSNzXNsPMB3fEFEFZb/GkZNHeGb7hCZCVG9/f8Eiuh2MHeb2kjUJaEN8w==}
     engines: {node: '>=22'}
 
   '@k03mad/simple-date@4.2.1':
@@ -1515,9 +1515,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@k03mad/ip2geo@11.6.0':
+  '@k03mad/ip2geo@12.0.0':
     dependencies:
-      '@k03mad/request': 7.7.0
+      '@k03mad/request': 7.8.0
       '@k03mad/simple-log': 5.2.1
       chalk: 5.4.1
       debug: 4.4.0(supports-color@5.5.0)
@@ -1525,7 +1525,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@k03mad/request@7.7.0':
+  '@k03mad/request@7.8.0':
     dependencies:
       chalk: 5.4.1
       debug: 4.4.0(supports-color@5.5.0)
