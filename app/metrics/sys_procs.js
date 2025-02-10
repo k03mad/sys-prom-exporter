@@ -24,10 +24,16 @@ export default {
             const memNum = Number(mem);
 
             if (cpuNum > 0 || memNum > 0) {
+                const name = proc.join(' ').trim();
+
                 try {
                     const path = await pathByPid(pid);
-                    return {name: `${path} ${proc.join(' ')}`.trim(), cpu: cpuNum, mem: memNum};
-                } catch {}
+                    return {name: `${path} ${name}`, cpu: cpuNum, mem: memNum};
+                } catch {
+                    if (name) {
+                        return {name, cpu: cpuNum, mem: memNum};
+                    }
+                }
             }
         }));
 
