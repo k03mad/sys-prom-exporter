@@ -29,11 +29,7 @@ export default {
                 try {
                     const path = await pathByPid(pid);
                     return {name: `${path} ${name}`, cpu: cpuNum, mem: memNum};
-                } catch {
-                    if (name) {
-                        return {name, cpu: cpuNum, mem: memNum};
-                    }
-                }
+                } catch {}
             }
         }));
 

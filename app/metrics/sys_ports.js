@@ -19,9 +19,11 @@ export default {
             // header
             if (i > 0) {
                 const {name, port, pid} = row.match(RE).groups;
-                const path = await pathByPid(pid);
 
-                return {name: `${path} ${name}`, port: Number(port)};
+                try {
+                    const path = await pathByPid(pid);
+                    return {name: `${path} ${name}`, port: Number(port)};
+                } catch {}
             }
         }));
 
