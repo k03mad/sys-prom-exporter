@@ -30,7 +30,7 @@ export default {
         const names = [];
         let currentPort;
 
-        data.filter(Boolean).sort((a, b) => a.port - b.port).forEach(elem => {
+        data.filter(Boolean).toSorted((a, b) => a.port - b.port).forEach(elem => {
             if (elem.port !== currentPort) {
                 const label = names.includes(elem.name)
                     ? `${elem.name} (${names.filter(name => name === elem.name).length + 1})`
