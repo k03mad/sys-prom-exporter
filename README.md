@@ -6,7 +6,7 @@
 
 ```bash
 # one time
-npm run setup
+npm i
 
 # start app
 npm run start --port=11000 --turnoff=sys_temp,sys_ufw,sys_wg
