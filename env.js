@@ -1,5 +1,3 @@
-import os from 'node:os';
-
 const env = {
     server: {
         port: process.env.npm_config_port
@@ -11,10 +9,6 @@ const env = {
             || process.env.SYS_EXPORTER_METRICS_TURN_OFF,
     },
     debug: process.env.DEBUG,
-    geoip: {
-        cacheDir: `${os.homedir()}/.ip2geo-cache`,
-        cacheMapMaxEntries: Infinity,
-    },
 };
 
 export default env;
