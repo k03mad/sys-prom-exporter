@@ -1,6 +1,6 @@
 {
   "name": "sys-prom-exporter",
-  "version": "1.12.5",
+  "version": "1.13.0",
   "description": "[System — Prometheus] exporter",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -16,7 +16,7 @@
     "node": ">=24"
   },
   "dependencies": {
-    "@k03mad/simple-prom": "5.12.5",
+    "@k03mad/simple-prom": "5.13.0",
     "debug": "4.4.3"
   },
   "devDependencies": {
