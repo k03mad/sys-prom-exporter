@@ -1,6 +1,6 @@
 {
   "name": "sys-prom-exporter",
-  "version": "1.14.0",
+  "version": "1.14.1",
   "description": "[System — Prometheus] exporter",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -16,11 +16,11 @@
     "node": ">=24"
   },
   "dependencies": {
-    "@k03mad/simple-prom": "5.14.0",
+    "@k03mad/simple-prom": "5.14.1",
     "debug": "4.4.3"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "29.14.0",
+    "@k03mad/eslint-config": "29.14.1",
     "eslint": "9.39.1",
     "husky": "9.1.7",
     "nodemon": "3.1.11"
