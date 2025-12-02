@@ -15,8 +15,6 @@ export default {
 
     async collect(ctx) {
         if (((Date.now() - timestamp) / 60_000) > RUN_ONLY_EVERY_MINUTES) {
-            timestamp = Date.now();
-
             ctx.reset();
 
             const stdout = await run(CMD);
@@ -27,6 +25,8 @@ export default {
                 .length;
 
             ctx.labels('updates').set(updates);
+
+            timestamp = Date.now();
         }
     },
 };

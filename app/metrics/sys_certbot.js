@@ -19,8 +19,6 @@ export default {
 
     async collect(ctx) {
         if (((Date.now() - timestamp) / 60_000) > RUN_ONLY_EVERY_MINUTES) {
-            timestamp = Date.now();
-
             ctx.reset();
 
             const stdout = await run(CMD);
@@ -31,6 +29,8 @@ export default {
             domains.forEach((domain, i) => {
                 ctx.labels(domain).set(valid[i]);
             });
+
+            timestamp = Date.now();
         }
     },
 };
