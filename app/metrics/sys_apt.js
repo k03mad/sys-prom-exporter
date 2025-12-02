@@ -4,7 +4,8 @@ import {run} from '../helpers/shell.js';
 const CMD = 'sudo apt-get update && sudo apt-get upgrade -u -s';
 const FIND_STARTS = 'Inst';
 
-const RUN_ONLY_EVERY_MS = 3_600_000;
+const RUN_ONLY_EVERY_MINUTES = 360;
+
 let timestamp;
 
 export default {
@@ -15,7 +16,7 @@ export default {
     async collect(ctx) {
         if (
             !timestamp
-            || (Date.now() - timestamp) > RUN_ONLY_EVERY_MS
+            || ((Date.now() - timestamp) / 60_000) > RUN_ONLY_EVERY_MINUTES
         ) {
             timestamp = Date.now();
             ctx.reset();
