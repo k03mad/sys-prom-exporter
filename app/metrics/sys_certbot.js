@@ -9,7 +9,8 @@ const RE = {
 };
 
 const RUN_ONLY_EVERY_MINUTES = 360;
-let timestamp;
+
+let timestamp = Date.now();
 
 export default {
     name: getCurrentFilename(import.meta.url),
@@ -17,11 +18,9 @@ export default {
     labelNames: ['type'],
 
     async collect(ctx) {
-        if (
-            !timestamp
-            || ((Date.now() - timestamp) / 60_000) > RUN_ONLY_EVERY_MINUTES
-        ) {
+        if (((Date.now() - timestamp) / 60_000) > RUN_ONLY_EVERY_MINUTES) {
             timestamp = Date.now();
+
             ctx.reset();
 
             const stdout = await run(CMD);
