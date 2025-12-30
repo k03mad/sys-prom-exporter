@@ -27,3 +27,25 @@ jobs:
             git pull
             ~/.nvm/nvm-exec pnpm i
             systemctl restart sys-exporter.service
+
+  ssh-opi:
+    environment: opi
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: appleboy/ssh-action@v1.2.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -x
+            lsb_release -a
+            cd ~/git/sys-prom-exporter
+            git reset --hard
+            git pull
+            ~/.nvm/nvm-exec pnpm i
+            sudo systemctl restart sys-exporter.service
