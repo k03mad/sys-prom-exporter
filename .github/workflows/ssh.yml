@@ -5,13 +5,14 @@ on:
     branches:
       - master
 
+concurrency:
+  group: ${{ github.ref }}-${{ github.job }}
+  cancel-in-progress: true
+
 jobs:
   ssh-vds:
     environment: vds
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: appleboy/ssh-action@v1.2.4
         with:
@@ -31,9 +32,6 @@ jobs:
   ssh-opi:
     environment: opi
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: appleboy/ssh-action@v1.2.4
         with:
