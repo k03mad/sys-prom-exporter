@@ -16,7 +16,7 @@
     "node": ">=25"
   },
   "dependencies": {
-    "@k03mad/simple-prom": "9.0.0",
+    "@k03mad/simple-prom": "9.3.0",
     "debug": "4.4.3"
   },
   "devDependencies": {
