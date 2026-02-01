@@ -14,7 +14,7 @@ jobs:
     environment: vds
     runs-on: ubuntu-latest
     steps:
-      - uses: appleboy/ssh-action@v1.2.4
+      - uses: appleboy/ssh-action@v1.2.5
         with:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
@@ -33,7 +33,7 @@ jobs:
     environment: opi
     runs-on: ubuntu-latest
     steps:
-      - uses: appleboy/ssh-action@v1.2.4
+      - uses: appleboy/ssh-action@v1.2.5
         with:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
