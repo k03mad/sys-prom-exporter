@@ -19,7 +19,7 @@
     "prepare": "husky || true"
   },
   "dependencies": {
-    "@k03mad/simple-prom": "10.1.0",
+    "@k03mad/simple-prom": "11.0.1",
     "debug": "4.4.3"
   },
   "devDependencies": {
