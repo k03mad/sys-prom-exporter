@@ -11,10 +11,7 @@ const RE = {
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: [
-        'name',
-        'type',
-    ],
+    labelNames: ['name', 'type'],
 
     async collect(ctx) {
         ctx.reset();
@@ -22,13 +19,15 @@ export default {
         const stdout = await run(CMD);
         const jails = [...stdout.matchAll(RE.jails)].map(elem => elem[1]);
 
-        await Promise.all(jails.map(async jail => {
-            const status = await run(`${CMD} ${jail}`);
-            const stats = Object.entries(status.match(RE.stats).groups);
+        await Promise.all(
+            jails.map(async jail => {
+                const status = await run(`${CMD} ${jail}`);
+                const stats = Object.entries(status.match(RE.stats).groups);
 
-            stats.forEach(([name, value]) => {
-                ctx.labels(name, jail).set(Number(value));
-            });
-        }));
+                stats.forEach(([name, value]) => {
+                    ctx.labels(name, jail).set(Number(value));
+                });
+            }),
+        );
     },
 };

@@ -12,9 +12,11 @@ export default {
     async collect(ctx) {
         ctx.reset();
 
-        await Promise.all(THERMAL_ZONES.map(async zone => {
-            const cpuTemp = await run(cmd(zone));
-            ctx.labels('cpu', zone).set(Number(cpuTemp.trim()) / 1000);
-        }));
+        await Promise.all(
+            THERMAL_ZONES.map(async zone => {
+                const cpuTemp = await run(cmd(zone));
+                ctx.labels('cpu', zone).set(Number(cpuTemp.trim()) / 1000);
+            }),
+        );
     },
 };

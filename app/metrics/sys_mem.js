@@ -36,13 +36,13 @@ export default {
         ctx.labels('Slab').set(data.Slab);
 
         ctx.labels('Apps').set(
-            data.MemTotal
-            - data.MemFree
-            - data.Buffers
-            - data.Cached
-            - data.Slab
-            - data.PageTables
-            - data.SwapCached,
+            data.MemTotal -
+                data.MemFree -
+                data.Buffers -
+                data.Cached -
+                data.Slab -
+                data.PageTables -
+                data.SwapCached,
         );
     },
 };

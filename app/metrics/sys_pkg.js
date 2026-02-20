@@ -14,10 +14,7 @@ export default {
 
         const stdout = await run(CMD);
 
-        const packages = stdout
-            .split('\n')
-            .filter(elem => elem.startsWith(FIND_STARTS))
-            .length;
+        const packages = stdout.split('\n').filter(elem => elem.startsWith(FIND_STARTS)).length;
 
         ctx.labels('count').set(packages);
     },

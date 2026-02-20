@@ -18,7 +18,7 @@ export default {
     labelNames: ['type'],
 
     async collect(ctx) {
-        if (((Date.now() - timestamp) / 60_000) > RUN_ONLY_EVERY_MINUTES) {
+        if ((Date.now() - timestamp) / 60_000 > RUN_ONLY_EVERY_MINUTES) {
             ctx.reset();
 
             const stdout = await run(CMD);

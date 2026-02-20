@@ -6,10 +6,7 @@ const CMD = 'iostat';
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: [
-        'name',
-        'type',
-    ],
+    labelNames: ['name', 'type'],
 
     async collect(ctx) {
         ctx.reset();

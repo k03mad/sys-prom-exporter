@@ -14,15 +14,12 @@ export default {
     labelNames: ['name'],
 
     async collect(ctx) {
-        if (((Date.now() - timestamp) / 60_000) > RUN_ONLY_EVERY_MINUTES) {
+        if ((Date.now() - timestamp) / 60_000 > RUN_ONLY_EVERY_MINUTES) {
             ctx.reset();
 
             const stdout = await run(CMD);
 
-            const updates = stdout
-                .split('\n')
-                .filter(el => el.startsWith(FIND_STARTS))
-                .length;
+            const updates = stdout.split('\n').filter(el => el.startsWith(FIND_STARTS)).length;
 
             ctx.labels('updates').set(updates);
 

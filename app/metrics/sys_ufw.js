@@ -7,13 +7,7 @@ const RE = /\[\s*(\d+)](\s{2,})?/;
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: [
-        'num',
-        'port',
-        'rule',
-        'ip',
-        'comment',
-    ],
+    labelNames: ['num', 'port', 'rule', 'ip', 'comment'],
 
     async collect(ctx) {
         ctx.reset();
@@ -24,13 +18,11 @@ export default {
         table.forEach((row, i) => {
             // headers
             if (i >= 4) {
-                const [num, port, rule1, rule2, ip, ...comment] = row.replace(RE, '$1').split(/\s+/);
+                const [num, port, rule1, rule2, ip, ...comment] = row
+                    .replace(RE, '$1')
+                    .split(/\s+/);
 
-                const commentTrim = comment
-                    .join(' ')
-                    .trim()
-                    .replace(/^#/, '')
-                    .trim();
+                const commentTrim = comment.join(' ').trim().replace(/^#/, '').trim();
 
                 ctx.labels(num, port, `${rule1} ${rule2}`, ip, commentTrim).set(1);
             }

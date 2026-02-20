@@ -15,32 +15,36 @@ export default {
         const stdout = await run(CMD);
         const table = stdout.split('\n');
 
-        const data = await Promise.all(table.map(async (row, i) => {
-            // header
-            if (i > 0) {
-                const {name, port, pid} = row.match(RE).groups;
+        const data = await Promise.all(
+            table.map(async (row, i) => {
+                // header
+                if (i > 0) {
+                    const {name, port, pid} = row.match(RE).groups;
 
-                try {
-                    const path = await pathByPid(pid);
-                    return {name: `${path} ${name}`, port: Number(port)};
-                } catch {}
-            }
-        }));
+                    try {
+                        const path = await pathByPid(pid);
+                        return {name: `${path} ${name}`, port: Number(port)};
+                    } catch {}
+                }
+            }),
+        );
 
         const names = [];
         let currentPort;
 
-        data.filter(Boolean).toSorted((a, b) => a.port - b.port).forEach(elem => {
-            if (elem.port !== currentPort) {
-                const label = names.includes(elem.name)
-                    ? `${elem.name} (${names.filter(name => name === elem.name).length + 1})`
-                    : elem.name;
+        data.filter(Boolean)
+            .toSorted((a, b) => a.port - b.port)
+            .forEach(elem => {
+                if (elem.port !== currentPort) {
+                    const label = names.includes(elem.name)
+                        ? `${elem.name} (${names.filter(name => name === elem.name).length + 1})`
+                        : elem.name;
 
-                names.push(elem.name);
-                currentPort = elem.port;
+                    names.push(elem.name);
+                    currentPort = elem.port;
 
-                ctx.labels(label).set(elem.port);
-            }
-        });
+                    ctx.labels(label).set(elem.port);
+                }
+            });
     },
 };

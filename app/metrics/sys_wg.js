@@ -15,10 +15,7 @@ export default {
     async collect(ctx) {
         ctx.reset();
 
-        const [config, dump] = await Promise.all([
-            run(CMD_CONF),
-            run(CMD),
-        ]);
+        const [config, dump] = await Promise.all([run(CMD_CONF), run(CMD)]);
 
         const configTable = config.split('\n');
         const dumpTable = dump.split('\n');

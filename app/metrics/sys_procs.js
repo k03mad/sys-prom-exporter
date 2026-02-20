@@ -6,10 +6,7 @@ const CMD = 'ps -eo pid,pcpu,pmem,comm';
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: [
-        'name',
-        'type',
-    ],
+    labelNames: ['name', 'type'],
 
     async collect(ctx) {
         ctx.reset();
@@ -17,21 +14,23 @@ export default {
         const stdout = await run(CMD);
         const table = stdout.split('\n');
 
-        const data = await Promise.all(table.map(async row => {
-            const [pid, cpu, mem, ...proc] = row.split(/\s+/).filter(Boolean);
+        const data = await Promise.all(
+            table.map(async row => {
+                const [pid, cpu, mem, ...proc] = row.split(/\s+/).filter(Boolean);
 
-            const cpuNum = Number(cpu);
-            const memNum = Number(mem);
+                const cpuNum = Number(cpu);
+                const memNum = Number(mem);
 
-            if (cpuNum > 0 || memNum > 0) {
-                const name = proc.join(' ').trim();
+                if (cpuNum > 0 || memNum > 0) {
+                    const name = proc.join(' ').trim();
 
-                try {
-                    const path = await pathByPid(pid);
-                    return {name: `${path} ${name}`, cpu: cpuNum, mem: memNum};
-                } catch {}
-            }
-        }));
+                    try {
+                        const path = await pathByPid(pid);
+                        return {name: `${path} ${name}`, cpu: cpuNum, mem: memNum};
+                    } catch {}
+                }
+            }),
+        );
 
         const metricsCpu = {};
         const metricsMem = {};

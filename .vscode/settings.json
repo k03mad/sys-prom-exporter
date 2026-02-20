@@ -1,11 +1,3 @@
 {
-    "cSpell.words": [
-      "certbot",
-      "Dups",
-      "geoip",
-      "isps",
-      "pcpu",
-      "pmem",
-      "procs"
-    ]
+  "cSpell.words": ["certbot", "Dups", "geoip", "isps", "pcpu", "pmem", "procs"]
 }

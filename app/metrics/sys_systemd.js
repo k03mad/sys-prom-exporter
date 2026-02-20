@@ -10,18 +10,12 @@ const FIND_INCLUDES = '.';
 export default {
     name: getCurrentFilename(import.meta.url),
     help: CMD,
-    labelNames: [
-        'name',
-        'type',
-    ],
+    labelNames: ['name', 'type'],
 
     async collect(ctx) {
         ctx.reset();
 
-        const [stdout, stdoutFailed] = await Promise.all([
-            run(CMD),
-            run(CMD_FAILED),
-        ]);
+        const [stdout, stdoutFailed] = await Promise.all([run(CMD), run(CMD_FAILED)]);
 
         const table = stdout.split('\n');
         const tableFailed = stdoutFailed.split('\n');
