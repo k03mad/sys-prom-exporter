@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 export {default as sys_apt} from './sys_apt.js';
 export {default as sys_certbot} from './sys_certbot.js';
 export {default as sys_cpus} from './sys_cpus.js';
