@@ -14,4 +14,3 @@ export {default as sys_systemd} from './sys_systemd.js';
 export {default as sys_temp} from './sys_temp.js';
 export {default as sys_ufw} from './sys_ufw.js';
 export {default as sys_uptime} from './sys_uptime.js';
-export {default as sys_wg} from './sys_wg.js';
