@@ -27,7 +27,11 @@ export default {
             if (i > 0) {
                 dump.split('\n').forEach(row => {
                     const cells = row.split(/\s+/);
-                    ctx.labels(`${key} | ${cells[4]}`).set(Number(cells[6]) + Number(cells[7]));
+                    const ip = cells[4];
+
+                    if (/^\d/.test(ip)) {
+                        ctx.labels(`${key} | ${cells[4]}`).set(Number(cells[6]) + Number(cells[7]));
+                    }
                 });
             }
         });
