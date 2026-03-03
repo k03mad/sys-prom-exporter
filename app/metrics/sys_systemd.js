@@ -20,7 +20,9 @@ export default {
         const table = stdout.split('\n');
         const tableFailed = stdoutFailed.split('\n');
 
-        const counters = {};
+        const counters = {
+            failed: 0,
+        };
 
         table.forEach((row, i) => {
             // header
