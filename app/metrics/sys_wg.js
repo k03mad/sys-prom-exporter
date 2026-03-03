@@ -23,17 +23,17 @@ export default {
             }),
         );
 
-        data.forEach(({key, dump}, i) => {
-            if (i > 0) {
-                dump.split('\n').forEach(row => {
+        data.forEach(({key, dump}) => {
+            dump.split('\n').forEach((row, i) => {
+                if (i > 0) {
                     const cells = row.split(/\s+/);
                     const ip = cells[4];
 
                     if (/^\d/.test(ip)) {
                         ctx.labels(`${key} | ${cells[4]}`).set(Number(cells[6]) + Number(cells[7]));
                     }
-                });
-            }
+                }
+            });
         });
     },
 };
