@@ -1,0 +1,35 @@
+import {getCurrentFilename} from '../helpers/paths.js';
+import {run} from '../helpers/shell.js';
+
+const IMAGES = {
+    awg: 'amnezia-awg',
+    wg: 'amnezia-wireguard',
+};
+
+const exec = image => `docker exec ${image} wg show all dump`;
+
+export default {
+    name: getCurrentFilename(import.meta.url),
+    help: Object.values(IMAGES).join(' / '),
+    labelNames: ['type'],
+
+    async collect(ctx) {
+        ctx.reset();
+
+        const data = await Promise.all(
+            Object.entries(IMAGES).map(async ([key, value]) => {
+                const dump = await run(exec(value));
+                return {key, dump};
+            }),
+        );
+
+        data.forEach(({key, dump}, i) => {
+            if (i > 0) {
+                dump.split('\n').forEach(row => {
+                    const cells = row.split(/\s+/);
+                    ctx.labels(`${key} | ${cells[4]}`).set(Number(cells[6]) + Number(cells[7]));
+                });
+            }
+        });
+    },
+};
