@@ -1,3 +1,6 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
@@ -16,6 +19,13 @@ export default {
     async collect(ctx) {
         ctx.reset();
 
+        let users;
+
+        try {
+            const wg = await fs.readFile(path.join(process.cwd(), 'wg.json'));
+            users = JSON.parse(wg);
+        } catch {}
+
         const data = await Promise.all(
             Object.entries(IMAGES).map(async ([key, value]) => {
                 const dump = await run(exec(value));
@@ -30,7 +40,8 @@ export default {
                     const ip = cells[4];
 
                     if (/^\d/.test(ip)) {
-                        ctx.labels(`${key} | ${cells[4]}`).set(Number(cells[6]) + Number(cells[7]));
+                        const label = `${key} | ${cells[4]}`;
+                        ctx.labels(users[label] || label).set(Number(cells[6]) + Number(cells[7]));
                     }
                 }
             });
