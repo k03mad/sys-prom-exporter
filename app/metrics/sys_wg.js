@@ -19,7 +19,7 @@ export default {
     async collect(ctx) {
         ctx.reset();
 
-        let users;
+        let users = {};
 
         try {
             const wg = await fs.readFile(path.join(process.cwd(), 'wg.json'));
