@@ -1,6 +1,6 @@
 {
   "name": "sys-prom-exporter",
-  "version": "7.2.0",
+  "version": "7.3.0",
   "private": true,
   "description": "[System — Prometheus] exporter",
   "license": "MIT",
@@ -19,15 +19,15 @@
     "prepare": "husky || true"
   },
   "dependencies": {
-    "@k03mad/simple-prom": "11.2.0",
+    "@k03mad/simple-prom": "11.3.0",
     "debug": "4.4.3"
   },
   "devDependencies": {
-    "@k03mad/oxlint-config": "0.2.0",
+    "@k03mad/oxlint-config": "0.3.0",
     "husky": "9.1.7",
     "nodemon": "3.1.14",
-    "oxfmt": "0.36.0",
-    "oxlint": "1.51.0"
+    "oxfmt": "0.38.0",
+    "oxlint": "1.53.0"
   },
   "engines": {
     "node": ">=25"
