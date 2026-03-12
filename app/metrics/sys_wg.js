@@ -26,7 +26,7 @@ export default {
             }),
         );
 
-        data.forEach(({key, dump}) => {
+        data.filter(Boolean).forEach(({key, dump}) => {
             dump.split('\n').forEach((row, i) => {
                 if (i > 0) {
                     const cells = row.split(/\s+/);
