@@ -1,11 +1,9 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
-
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
 const IMAGES = {
-    awg: 'amnezia-awg2',
+    awg: 'amnezia-awg',
+    awg2: 'amnezia-awg2',
     wg: 'amnezia-wireguard',
 };
 
@@ -19,17 +17,12 @@ export default {
     async collect(ctx) {
         ctx.reset();
 
-        let users = {};
-
-        try {
-            const wg = await fs.readFile(path.join(process.cwd(), 'wg.json'));
-            users = JSON.parse(wg);
-        } catch {}
-
         const data = await Promise.all(
             Object.entries(IMAGES).map(async ([key, value]) => {
-                const dump = await run(exec(value));
-                return {key, dump};
+                try {
+                    const dump = await run(exec(value));
+                    return {key, dump};
+                } catch {}
             }),
         );
 
@@ -40,8 +33,7 @@ export default {
                     const ip = cells[4];
 
                     if (/^\d/.test(ip)) {
-                        const label = `${key} | ${cells[4]}`;
-                        ctx.labels(users[label] || label).set(Number(cells[6]) + Number(cells[7]));
+                        ctx.labels(`${key} | ${cells[4]}`).set(Number(cells[6]) + Number(cells[7]));
                     }
                 }
             });

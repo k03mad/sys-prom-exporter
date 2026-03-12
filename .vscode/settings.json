@@ -22,5 +22,6 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
-  }
+  },
+  "cSpell.words": ["amnezia"]
 }
