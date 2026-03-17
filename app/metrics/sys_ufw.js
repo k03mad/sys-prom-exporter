@@ -3,6 +3,7 @@ import {run} from '../helpers/shell.js';
 
 const CMD = 'ufw status numbered';
 const RE = /\[\s*(\d+)](\s{2,})?/;
+const V6_FLAG = '(v6)';
 
 export default {
     name: getCurrentFilename(import.meta.url),
@@ -18,11 +19,17 @@ export default {
         table.forEach((row, i) => {
             // headers
             if (i >= 4) {
-                const [num, port, rule1, rule2, ip, ...comment] = row
-                    .replace(RE, '$1')
-                    .split(/\s+/);
+                let rowArr = row.replace(RE, '$1').split(/\s+/);
+                const isV6 = rowArr.includes(V6_FLAG);
 
-                const commentTrim = comment.join(' ').trim().replace(/^#/, '').trim();
+                if (isV6) {
+                    rowArr = rowArr.filter(elem => elem !== V6_FLAG);
+                }
+
+                const [num, port, rule1, rule2, ip, ...comment] = rowArr;
+
+                const commentTrim =
+                    comment.join(' ').trim().replace(/^#/, '').trim() + (isV6 ? ` ${V6_FLAG}` : '');
 
                 ctx.labels(num, port, `${rule1} ${rule2}`, ip, commentTrim).set(1);
             }
