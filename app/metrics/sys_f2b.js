@@ -1,7 +1,7 @@
 import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
-const CMD = 'sudo fail2ban-client status';
+const CMD = 'fail2ban-client status';
 
 const RE = {
     jails: /(\w+)(,|$)/g,
