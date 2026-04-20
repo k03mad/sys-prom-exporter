@@ -2,8 +2,7 @@ import {getCurrentFilename} from '../helpers/paths.js';
 import {run} from '../helpers/shell.js';
 
 const IMAGES = {
-    // awg: 'amnezia-awg',
-    // awg2: 'amnezia-awg2',
+    awg: 'amnezia-awg2',
     wg: 'amnezia-wireguard',
 };
 
