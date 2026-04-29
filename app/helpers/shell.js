@@ -8,7 +8,7 @@ const exec = promisify(cp.exec);
 
 /**
  * @param {string} runString
- * @returns {Promise<{stdout: string, stderr: string}>}
+ * @returns {Promise<{stdout: string; stderr: string}>}
  */
 export const run = async runString => {
     debug(runString);
@@ -18,7 +18,7 @@ export const run = async runString => {
 };
 
 /**
- * @param {string|number} pid
+ * @param {string | number} pid
  * @returns {Promise<string>}
  */
 export const pathByPid = async pid => {
