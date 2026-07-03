@@ -9,15 +9,15 @@ importers:
   .:
     dependencies:
       '@k03mad/simple-prom':
-        specifier: 11.9.1
-        version: 11.9.1
+        specifier: 11.10.0
+        version: 11.10.0
       debug:
         specifier: 4.4.3
         version: 4.4.3(supports-color@5.5.0)
     devDependencies:
       '@k03mad/oxlint-config':
-        specifier: 0.10.1
-        version: 0.10.1
+        specifier: 0.11.0
+        version: 0.11.0
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -33,12 +33,12 @@ importers:
 
 packages:
 
-  '@k03mad/oxlint-config@0.10.1':
-    resolution: {integrity: sha512-03p9EPC9T1FvIfmobJPecmUHJbqhmT75Ix3fIlSnGKyDeB2SN7etEudTv2/+wSWrBvaQS60w8gkhP8J/j3D7Nw==}
+  '@k03mad/oxlint-config@0.11.0':
+    resolution: {integrity: sha512-UMhn3E7hDXm8Hrgzn/PriwkVLuHYs248H3s2rSJS+v144bEHoblwua7CC8TRDR5yS69XTtxDayeQxOPgTdFYXw==}
     engines: {node: '>=24'}
 
-  '@k03mad/simple-prom@11.9.1':
-    resolution: {integrity: sha512-koGF2eXmXGpqTZJ9i1+8meAig8Ez/Ntf0GBEB6GDsrUOtnN3Tei2BSF+bmZvKqRWy/iHy/yzJD9FVmOflzvscQ==}
+  '@k03mad/simple-prom@11.10.0':
+    resolution: {integrity: sha512-Pv6RYmchVpPDWmpGQ9wmuERVhoMJNbkAu1EMyMi159lQXkSjfVL5UwT0FHgysMHD9WzRWDIVX0RgKIWmUlYztg==}
     engines: {node: '>=24'}
 
   '@opentelemetry/api@1.9.1':
@@ -751,9 +751,9 @@ packages:
 
 snapshots:
 
-  '@k03mad/oxlint-config@0.10.1': {}
+  '@k03mad/oxlint-config@0.11.0': {}
 
-  '@k03mad/simple-prom@11.9.1':
+  '@k03mad/simple-prom@11.10.0':
     dependencies:
       chalk: 5.6.2
       compression: 1.8.1
