@@ -1,6 +1,6 @@
 {
   "name": "sys-prom-exporter",
-  "version": "7.10.1",
+  "version": "7.10.2",
   "private": true,
   "description": "[System — Prometheus] exporter",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "prepare": "husky || true"
   },
   "dependencies": {
-    "@k03mad/simple-prom": "11.10.0",
+    "@k03mad/simple-prom": "11.10.1",
     "debug": "4.4.3"
   },
   "devDependencies": {
